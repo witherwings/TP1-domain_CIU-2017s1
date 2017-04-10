@@ -1,0 +1,8 @@
+.classpath
+.settings
+.project
+.svn
+/target
+/bin
+/generated-sources
+/settings
