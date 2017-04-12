@@ -33,4 +33,12 @@ class Country {
 			//throw ("No more places allowed");
 		}
 	}
+
+	def getPlaces() {
+		return this.places
+	}
+
+	def isConnectedTo(Country c) {
+		return this.connectedCountries.contains(c)
+	}
 }
