@@ -1,16 +1,11 @@
 import junit.framework.TestCase
 
-import java.util.List
 import java.util.ArrayList
 
 import Game.CaseFile
 import Game.Player
-import WorldMap.Country
-import WorldMap.Bank
-import WorldMap.Club
-import WorldMap.Embassy
-import People.Villain
-import People.Informant
+import WorldMap.*
+import People.*
 
 class TestCaseFile extends TestCase {
 

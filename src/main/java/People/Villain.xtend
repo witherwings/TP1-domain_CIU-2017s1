@@ -9,12 +9,12 @@ class Villain extends Occupant{
 	List<String> signs;
 	List<String> hobbies;
 	
-	new (String name, String gender)
+	new (String name, String gender, List<String> signs, List<String> hobbies)
 	{
 		this.name = name;
 		this.gender = gender;
-		this.signs = new ArrayList();
-		this.hobbies = new ArrayList();
+		this.signs = signs
+		this.hobbies = hobbies
 	}
 	
 	def void addSign(String newSign)
