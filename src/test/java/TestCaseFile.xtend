@@ -2,8 +2,7 @@ import junit.framework.TestCase
 
 import java.util.ArrayList
 
-import Game.CaseFile
-import Game.Player
+import Game.*
 import WorldMap.*
 import People.*
 
@@ -11,8 +10,10 @@ class TestCaseFile extends TestCase {
 
     def test_runACase() {
 
-        val v1 = new Villain("El gato", "indefinido")
-        val v2 = new Villain("Otro gato", "transexual")
+        val data = new GameData()
+
+        val v1 = data.acme_list(0)
+        val v2 = data.acme_list(1)
 
         val arg = new Country("Argentina")
 

@@ -1,3 +1,5 @@
+package Game
+
 import java.util.ArrayList
 
 import People.*
@@ -6,7 +8,7 @@ import WorldMap.*
 /**
  * Created by lucasf on 4/12/17.
  */
-class Data {
+class GameData {
 
     val acme_list = new ArrayList<Villain>()
     val mapamundi = new ArrayList<Country>()
@@ -27,5 +29,9 @@ class Data {
 
         // mapamundi
         // COMPLETAR
+    }
+
+    def acme_list(int index) {
+        return this.acme_list.get(index)
     }
 }
