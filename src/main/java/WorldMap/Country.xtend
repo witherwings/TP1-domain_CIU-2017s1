@@ -2,6 +2,7 @@ package WorldMap
 
 import java.util.List
 import java.util.ArrayList
+import People.Villain
 
 class Country {
 	String name;
@@ -13,8 +14,13 @@ class Country {
 	new (String name)
 	{
 		this.name = name;
+		this.features = new ArrayList()
 		this.connectedCountries = new ArrayList();
 		this.places = new ArrayList();
+	}
+	
+	def addFeature(String feature) {
+		this.features.add(feature)
 	}
 	
 	def void addCountry(Country newConnection)
@@ -41,4 +47,15 @@ class Country {
 	def isConnectedTo(Country c) {
 		return this.connectedCountries.contains(c)
 	}
+	
+	def getPlace(int index) {
+		return this.places.get(index)
+	}
+	
+	def visitedFor(Villain villano) {
+		for(CommonPlace place : this.places){
+			place.setInfoOccupant(villano)
+		}
+	}
+	
 }

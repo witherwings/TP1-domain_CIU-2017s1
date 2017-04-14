@@ -8,4 +8,12 @@ class Keeper extends Occupant {
 		//Wrong country, pal
 	}
 	
+	override void setClue(Villain villano){
+		// hacer algo
+	}
+	
+	override getClue() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
 }
