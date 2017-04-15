@@ -8,9 +8,14 @@ package AppModel
 import java.util.List
 import java.util.ArrayList
 
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
+
 import WorldMap.*
 import People.Informant
 
+@Observable
+@Accessors
 class MapamundiAppModel {
 
     List<Country> countries

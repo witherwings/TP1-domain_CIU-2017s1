@@ -3,7 +3,11 @@ package WorldMap
 import java.util.List
 import java.util.ArrayList
 import People.Villain
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Observable
+@Accessors
 class Country {
 	String name;
 	List<String> features;

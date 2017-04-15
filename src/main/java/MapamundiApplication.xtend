@@ -3,7 +3,6 @@
  */
 
 import org.uqbar.arena.Application
-
 import AppModel.MapamundiAppModel
 
 class MapamundiApplication extends Application {
