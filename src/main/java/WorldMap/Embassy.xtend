@@ -17,5 +17,10 @@ class Embassy extends CommonPlace {
 	override setInfoOccupant(Villain villano) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
+
+
+	override placeName() {
+		return "Embajada"
+	}
 	
 }

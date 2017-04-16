@@ -9,10 +9,13 @@ import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.windows.WindowOwner
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.widgets.List
+import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.Panel
 
 import AppModel.MapamundiAppModel
 import WorldMap.Country
+
+import Components.Title
 
 import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
 
@@ -39,6 +42,7 @@ class MapamundiWindow extends SimpleWindow<MapamundiAppModel> {
     def createCountryListPanel(Panel owner) {
         val countryListPanel = new Panel(owner)
 
+        new Title(countryListPanel, "Paises")
         new List<Country>(countryListPanel) => [
             (items <=> "countries").adapter = new PropertyAdapter(Country, "name")
             height = 150
@@ -57,6 +61,40 @@ class MapamundiWindow extends SimpleWindow<MapamundiAppModel> {
     }
 
     def createCountryInfoPanel(Panel owner) {
-        
+        val countryInfoPanel = new Panel(owner)
+        countryInfoPanel.layout = new VerticalLayout
+
+        val nombrePanel = new Panel(countryInfoPanel)
+        nombrePanel.layout = new ColumnLayout(2)
+
+        new Label(nombrePanel)=>[
+            setText("Nombre: ")
+            fontSize = 16
+        ]
+        new Label(nombrePanel)=>[
+            value <=> "selectedCountry.name"
+            fontSize = 16
+        ]
+        new Label(countryInfoPanel)=>[
+            setText("Caracteristicas: ")
+        ]
+        new List<Country>(countryInfoPanel) => [
+            (items <=> "selectedCountry.features")
+            width = 270
+        ]
+        new Label(countryInfoPanel)=>[
+            setText("Conexiones: ")
+        ]
+        new List<Country>(countryInfoPanel) => [
+            (items <=> "selectedCountry.connectedCointryNames")
+            width = 270
+        ]
+        new Label(countryInfoPanel)=>[
+            setText("Lugares: ")
+        ]
+        new List<Country>(countryInfoPanel) => [
+            (items <=> "selectedCountry.placesNames")
+            width = 270
+        ]
     }
 }

@@ -61,5 +61,21 @@ class Country {
 			place.setInfoOccupant(villano)
 		}
 	}
+
+	def connectedCointryNames() {
+		val l = new ArrayList<String>()
+		this.connectedCountries.forEach [
+			l.add(it.name)
+		]
+		return l
+	}
+
+	def placesNames() {
+		val l = new ArrayList<String>()
+		this.places.forEach [
+			l.add(it.placeName())
+		]
+		return l
+	}
 	
 }

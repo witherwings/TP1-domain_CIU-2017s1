@@ -17,5 +17,9 @@ class Bank extends CommonPlace {
 	override setInfoOccupant(Villain villano) {
 		occupant.setClue(villano)
 	}
+
+	override placeName() {
+		return "Banco"
+	}
 	
 }
