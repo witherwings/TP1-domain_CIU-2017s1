@@ -19,6 +19,12 @@ class Villain extends Occupant{
 		this.hobbies = hobbies
 	}
 	
+	new(String name) {
+		this.name = name
+		this.signs = new ArrayList()
+		this.hobbies = new ArrayList()
+	}
+	
 	def void addSign(String newSign)
 	{
 		this.signs.add(newSign);

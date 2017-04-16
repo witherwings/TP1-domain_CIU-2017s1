@@ -1,7 +1,11 @@
-
+import People.Informant
+import People.Keeper
+import People.Villain
+import WorldMap.Bank
+import WorldMap.Club
+import WorldMap.Country
+import WorldMap.Library
 import junit.framework.TestCase
-import People.*
-import WorldMap.*
 
 class TestCountry extends TestCase{
 	
