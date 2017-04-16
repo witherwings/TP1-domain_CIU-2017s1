@@ -2,7 +2,12 @@ package WorldMap
 
 import java.util.List
 import java.util.ArrayList
+import People.Villain
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Observable
+@Accessors
 class Country {
 	String name;
 	List<String> features;
@@ -13,8 +18,13 @@ class Country {
 	new (String name)
 	{
 		this.name = name;
+		this.features = new ArrayList()
 		this.connectedCountries = new ArrayList();
 		this.places = new ArrayList();
+	}
+	
+	def addFeature(String feature) {
+		this.features.add(feature)
 	}
 	
 	def void addCountry(Country newConnection)
@@ -41,4 +51,31 @@ class Country {
 	def isConnectedTo(Country c) {
 		return this.connectedCountries.contains(c)
 	}
+	
+	def getPlace(int index) {
+		return this.places.get(index)
+	}
+	
+	def visitedFor(Villain villano) {
+		for(CommonPlace place : this.places){
+			place.setInfoOccupant(villano)
+		}
+	}
+
+	def connectedCointryNames() {
+		val l = new ArrayList<String>()
+		this.connectedCountries.forEach [
+			l.add(it.name)
+		]
+		return l
+	}
+
+	def placesNames() {
+		val l = new ArrayList<String>()
+		this.places.forEach [
+			l.add(it.placeName())
+		]
+		return l
+	}
+	
 }

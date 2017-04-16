@@ -10,8 +10,16 @@ class Informant extends Occupant {
 		this.clue = clue
 	}
 	
+	override setClue(Villain villano){
+		this.clue = "I saw a people with "+ villano.getSigns()
+	}
+	
 	override takeAction() {
 		//Gives clues depending on the place.
+	}
+	
+	override String getClue() {
+		return this.clue
 	}
 	
 }
