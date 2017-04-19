@@ -11,7 +11,7 @@ class Informant extends Occupant {
 	}
 	
 	override setClue(Villain villano){
-		this.clue = "I saw a people with "+ villano.getSigns()
+		this.clue = "I saw a people with "+ villano.getRandomSign()
 	}
 	
 	override takeAction() {
