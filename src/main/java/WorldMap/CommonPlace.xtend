@@ -15,5 +15,5 @@ abstract class CommonPlace {
 	
 	def void setInfoOccupant(Villain villano)
 
-	def String placeName()
+	def String getPlaceName()
 }

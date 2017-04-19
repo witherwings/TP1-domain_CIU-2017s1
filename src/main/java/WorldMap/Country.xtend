@@ -23,6 +23,12 @@ class Country {
 		this.places = new ArrayList();
 	}
 	
+	new() {
+		this.features = new ArrayList()
+		this.connectedCountries = new ArrayList();
+		this.places = new ArrayList();
+		}
+	
 	def addFeature(String feature) {
 		this.features.add(feature)
 	}
@@ -73,7 +79,7 @@ class Country {
 	def placesNames() {
 		val l = new ArrayList<String>()
 		this.places.forEach [
-			l.add(it.placeName())
+			l.add(it.getPlaceName())
 		]
 		return l
 	}

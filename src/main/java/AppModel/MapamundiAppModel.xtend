@@ -13,6 +13,7 @@ import org.uqbar.commons.utils.Observable
 
 import WorldMap.*
 import People.Informant
+import WorldMap.Country
 
 @Observable
 @Accessors
@@ -58,4 +59,9 @@ class MapamundiAppModel {
 
         this.selectedCountry = arg
     }
+	
+	def addCountry(Country country) {
+		this.countries.add(country)
+	}
+	
 }

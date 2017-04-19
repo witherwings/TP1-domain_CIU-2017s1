@@ -19,7 +19,7 @@ class Embassy extends CommonPlace {
 	}
 
 
-	override placeName() {
+	override getPlaceName() {
 		return "Embajada"
 	}
 	

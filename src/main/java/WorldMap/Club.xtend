@@ -24,7 +24,7 @@ class Club extends CommonPlace {
 	}
 
 
-	override placeName() {
+	override getPlaceName() {
 		return "Club"
 	}
 	

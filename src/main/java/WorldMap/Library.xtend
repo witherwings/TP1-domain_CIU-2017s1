@@ -19,7 +19,7 @@ class Library extends CommonPlace {
 		occupant.setClue(villano)
 	}
 
-	override placeName() {
+	override getPlaceName() {
 		return "Libreria"
 	}
 	
