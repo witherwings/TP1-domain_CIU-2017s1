@@ -29,6 +29,12 @@ class Villain extends Occupant{
 		this.hobbies = new ArrayList()
 	}
 	
+	new() {
+		this.name = ""
+		this.signs = new ArrayList()
+		this.hobbies = new ArrayList()
+	}
+	
 	def void setGender(String gender)
 	{
 		this.gender = gender
@@ -70,6 +76,10 @@ class Villain extends Occupant{
 	
 	def static String randomIn(List<String> lista) {
 		lista.get(random.nextInt(lista.size))
+	}
+	
+	def selectedVillain() {
+		return this.selectedVillain
 	}
 	
 	// Fijarse bien esto
