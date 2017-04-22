@@ -3,6 +3,7 @@ package AppModel
 import People.Villain
 import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.arena.widgets.TextBox
 
 @Observable
 @Accessors
@@ -32,6 +33,10 @@ class VillainAppModel  {
 	
 	def hobbies() {
 		this.villain.hobbies 
+	}
+	
+	def addHobbie(String hobbie) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
 }
