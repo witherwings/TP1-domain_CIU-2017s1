@@ -12,3 +12,5 @@ TP1-CIU-2017s1.iml
 /generated-sources
 /settings
 /.idea
+/src/main/generated-sources
+/src/test/generated-sources
