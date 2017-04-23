@@ -5,6 +5,7 @@ import java.util.ArrayList
 import java.util.Random
 import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
+import WorldMap.Country
 
 @Observable
 @Accessors
@@ -13,6 +14,8 @@ class Villain extends Occupant{
 	String gender;
 	List<String> signs;
 	List<String> hobbies;
+	
+	Country destination
 	static val random = new Random
 	
 	new (String name, String gender, List<String> signs, List<String> hobbies)
@@ -25,6 +28,7 @@ class Villain extends Occupant{
 	
 	new(String name) {
 		this.name = name
+		this.gender = "None"
 		this.signs = new ArrayList()
 		this.hobbies = new ArrayList()
 	}
@@ -72,12 +76,28 @@ class Villain extends Occupant{
 		lista.get(random.nextInt(lista.size))
 	}
 	
+	def addDestination(WorldMap.Country country) {
+		this.destination = country
+	}
+	
 	// Fijarse bien esto
 	override setClue(Villain villano) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
 	override String getClue() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	override isInformant() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	override isKeeper() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	override getClueDestination() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	

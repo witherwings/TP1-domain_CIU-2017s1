@@ -14,14 +14,22 @@ class Player {
 		this.country = startCountry
 	}
 	
+	def String getPlaceName(){
+		return this.place.getPlaceName()
+	}
+	
+	def String getCountryName() {
+		return this.country.name
+	}
+	
 	def void warrant(Villain suspect){
 		var check = this.game.checkSuspect(suspect);
 		
 		//Luego del check tenemos que ver como devolvemos si gano o no
 	}
 
-	def visit(CommonPlace place) {
-		this.place = place
+	def visit(int place) {
+		this.place = this.country.getPlace(place)
 	}
 
 	def getCountryPlaces() {
@@ -29,11 +37,17 @@ class Player {
 	}
 
 	def travelTo(Country c) {
-		if (this.country.isConnectedTo(c)) {
-			this.country = c
-			this.place = null
-		} else {
-			// tirrar esesion!
-		}
+		this.country = c
+//		if (this.country.isConnectedTo(c)) {
+//			this.country = c
+//			this.place = null
+//		} else {
+//			// tirrar esesion!
+//		}
 	}
+	
+	def getInfo() {
+		return this.place.giveInformation()
+	}
+	
 }

@@ -16,4 +16,16 @@ class Keeper extends Occupant {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
+	override isInformant(){
+		return false
+	}
+	
+	override isKeeper() {
+		return true
+	}
+	
+	override getClueDestination() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
 }

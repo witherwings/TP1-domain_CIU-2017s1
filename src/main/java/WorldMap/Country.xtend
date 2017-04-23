@@ -5,6 +5,7 @@ import java.util.ArrayList
 import People.Villain
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
+import java.util.Random
 
 @Observable
 @Accessors
@@ -14,6 +15,8 @@ class Country {
 	List<Country> connectedCountries;
 	//There are only 3 places per country
 	List<CommonPlace> places;
+	
+	static val random = new Random
 	
 	new (String name)
 	{
@@ -82,6 +85,14 @@ class Country {
 			l.add(it.getPlaceName())
 		]
 		return l
+	}
+	
+	def String getRandomFeature() {
+		return randomIn(this.features)
+	}
+	
+	def static String randomIn(List<String> lista) {
+		lista.get(random.nextInt(lista.size))
 	}
 	
 }

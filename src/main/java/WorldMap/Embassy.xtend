@@ -3,6 +3,7 @@ package WorldMap
 import WorldMap.CommonPlace
 import People.Occupant
 import People.Villain
+import People.Informant
 
 class Embassy extends CommonPlace {
 
@@ -11,11 +12,14 @@ class Embassy extends CommonPlace {
 	}
 	
 	override giveInformation() {
-		return "2 clues about villain destination"
+		if(this.occupant.isInformant()){
+			// Ver como hacer para devolver dos pistas sobre el destino
+			return "Se fue para un pais que tiene "+ this.occupant.getClueDestination()
+		}
 	}
 	
 	override setInfoOccupant(Villain villano) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		this.occupant = new Informant(villano)
 	}
 
 

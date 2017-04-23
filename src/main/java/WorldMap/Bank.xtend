@@ -3,6 +3,7 @@ package WorldMap
 import People.Occupant
 import WorldMap.CommonPlace
 import People.Villain
+import People.Informant
 
 class Bank extends CommonPlace {
 
@@ -11,11 +12,14 @@ class Bank extends CommonPlace {
 	}
 	
 	override giveInformation() {
-		return "1 clue about villain destination and 1 clue about villain signs"
+		if(this.occupant.isInformant()){
+			return "Vi una persona con "+ this.occupant.getClue() +
+			"y se fue para un pais que tiene "+ this.occupant.getClueDestination()
+		}
 	}
 	
 	override setInfoOccupant(Villain villano) {
-		occupant.setClue(villano)
+		this.occupant = new Informant(villano)
 	}
 
 	override getPlaceName() {

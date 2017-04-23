@@ -9,4 +9,10 @@ abstract class Occupant {
 	
 	def String getClue()
 	
+	def boolean isInformant()
+	
+	def boolean isKeeper()
+	
+	def String getClueDestination()
+	
 }

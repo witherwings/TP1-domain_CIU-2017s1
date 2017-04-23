@@ -1,48 +1,20 @@
-import Game.CaseFile
 import Game.GameData
 import Game.Player
-import People.Informant
-import WorldMap.Bank
-import WorldMap.Club
-import WorldMap.Country
-import WorldMap.Embassy
-import java.util.ArrayList
 import junit.framework.TestCase
 
 class TestCaseFile extends TestCase {
-
-    def test_runACase() {
-
-        val data = new GameData()
-
-        val v1 = data.acme_list(0)
-        val v2 = data.acme_list(1)
-
-        val arg = new Country("Argentina")
-
-        arg.addPlace(new Bank(new Informant("se fue para peru")))
-        arg.addPlace(new Club(new Informant("")))
-        arg.addPlace(new Embassy(new Informant("")))
-
-        val per = new Country("Peru")
-
-        per.addPlace(new Bank(new Informant("se fue para el congo")))
-        per.addPlace(new Club(new Informant("")))
-        per.addPlace(new Embassy(new Informant("")))
-
-        val escapePlan = new ArrayList<Country>();
-        escapePlan.add(arg)
-        escapePlan.add(per)
-
-        val caso = new CaseFile(v1, escapePlan, "tu vieja", arg)
-
-        val player = new Player(caso, arg)
-
-        player.visit(player.getCountryPlaces().get(0))
-
-        player.travelTo(per)
-
-        assertFalse(caso.checkSuspect(v2))
-        assertTrue(caso.checkSuspect(v1))
+	
+	GameData game
+	Player jugador
+	
+    def testRunACase() {
+    	this.game = new GameData()
+    	this.jugador = new Player(this.game.getCase(), this.game.getRobCountry())
+    	
+    	this.jugador.travelTo(this.game.getCountry("Argentina"))
+        this.jugador.visit(0)// visita el banco
+       	val info = this.jugador.getInfo()
+       	println(info)
+       	assertEquals(1,1)
     }
 }
