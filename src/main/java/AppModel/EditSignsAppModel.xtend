@@ -19,11 +19,16 @@ class EditSignsAppModel {
 		this.newSigns  = new ArrayList<String>
 		this.villain = villain 
 		this.villain.signs.forEach [ this.newSigns.add(it) ]
-		this.selectedSign = this.newSigns.get(0)
+		if (this.newSigns.size > 0) {
+			this.selectedSign = this.newSigns.get(0)
+		}
 	}
 	
 	def addSign() {
 		this.newSigns.add(currSign)
+		if (this.newSigns.size == 1) {
+			this.selectedSign = this.newSigns.get(0)
+		}
 	}
 	
 	def removeSign() {

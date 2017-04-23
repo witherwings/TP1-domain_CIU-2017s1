@@ -2,13 +2,16 @@
 .settings
 .project
 .svn
-*.xtendbin
+.xtendbin
 TP1-CIU-2017s1.iml
 *._trace
 *.java
 *.java_trace
+*.xtendbin
 /target
 /bin
 /generated-sources
 /settings
 /.idea
+/src/main/generated-sources
+/src/test/generated-sources

@@ -40,4 +40,9 @@ class ArchiveVillainsAppModel {
 		
 		this.selectedVillain = carmen
 	}
+	
+	def addVillain(People.Villain villain) {
+		this.villains.add(villain)
+	}
+	
 }
