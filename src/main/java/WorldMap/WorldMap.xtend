@@ -1,36 +1,29 @@
-package AppModel
-
-/**
- * Created by lucasf on 4/15/17.
- * Mapamundi con datos de prueba para la vista
- */
+package WorldMap
 
 import java.util.List
 import java.util.ArrayList
-
-import org.eclipse.xtend.lib.annotations.Accessors
-import org.uqbar.commons.utils.Observable
-
-import WorldMap.*
 import People.Informant
-import WorldMap.Country
+import org.uqbar.commons.utils.Observable
+import org.eclipse.xtend.lib.annotations.Accessors
 
 @Observable
 @Accessors
-class MapamundiAppModel {
-
-    List<Country> countries
-    Country selectedCountry
-
-    new () {
-        val arg = new Country("Argentina") => [
+class WorldMap {
+	
+	List<Country> countries
+	
+	private static WorldMap instance = null
+	
+	new(){
+	//	countries = new ArrayList
+		val arg = new Country("Argentina", this) => [
             addFeature("Toman mate")
             addFeature("Hogar de Messi")
             addPlace(new Bank(new Informant("una pista")))
             addPlace(new Embassy(new Informant("una pista")))
             addPlace(new Library(new Informant("una pista")))
         ]
-        val usa = new Country("Estados Unidos") => [
+        val usa = new Country("Estados Unidos", this) => [
             addFeature("Esta Donald Trump")
             addFeature("Super bowl")
             addPlace(new Bank(new Informant("una pista")))
@@ -38,7 +31,7 @@ class MapamundiAppModel {
             addPlace(new Library(new Informant("una pista")))
 
         ]
-        val nor = new Country("Noruega") => [
+        val nor = new Country("Noruega", this) => [
             addFeature("Hace frio")
             addFeature("Altas rubias")
             addPlace(new Bank(new Informant("una pista")))
@@ -56,12 +49,25 @@ class MapamundiAppModel {
             add(usa)
             add(nor)
         ]
-
-        this.selectedCountry = arg
-    }
+	}
 	
-	def addCountry(Country country) {
+	static def getInstance() {
+		if (instance == null) {
+			instance = new WorldMap
+		}
+		instance
+	}
+	
+	def List<Country> getCountries(){
+		this.countries
+	}
+	
+	def addCountry(Country country){
 		this.countries.add(country)
+	}
+	
+	def removeCountry(Country country){
+		this.countries.remove(country)
 	}
 	
 }

@@ -3,7 +3,11 @@ package WorldMap
 import People.Occupant
 import WorldMap.CommonPlace
 import People.Villain
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Observable
+@Accessors
 class Library extends CommonPlace {
 
 	new (Occupant occupant) {

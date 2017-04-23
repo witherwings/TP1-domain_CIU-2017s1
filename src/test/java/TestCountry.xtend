@@ -6,12 +6,15 @@ import WorldMap.Club
 import WorldMap.Country
 import WorldMap.Library
 import junit.framework.TestCase
+import WorldMap.WorldMap
 
 class TestCountry extends TestCase{
 	
-	Country estadosUnidos = new Country("United States")
-	Country argentina = new Country("Argentina")
-	Country brasil = new Country("Brasil")
+	WorldMap map = new WorldMap()
+	
+	Country estadosUnidos = new Country("United States", map)
+	Country argentina = new Country("Argentina", map)
+	Country brasil = new Country("Brasil", map)
 	
 	Villain elGato = new Villain(
                 "The Cat",

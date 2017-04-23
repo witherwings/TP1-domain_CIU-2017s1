@@ -9,21 +9,24 @@ import org.uqbar.commons.utils.Observable
 @Observable
 @Accessors
 class Country {
+	WorldMap map
 	String name;
 	List<String> features;
 	List<Country> connectedCountries;
 	//There are only 3 places per country
 	List<CommonPlace> places;
 	
-	new (String name)
+	new (String name, WorldMap map)
 	{
+		this.map = map
 		this.name = name;
 		this.features = new ArrayList()
 		this.connectedCountries = new ArrayList();
 		this.places = new ArrayList();
 	}
 	
-	new() {
+	new(WorldMap map) {
+		this.map = map
 		this.features = new ArrayList()
 		this.connectedCountries = new ArrayList();
 		this.places = new ArrayList();
@@ -68,7 +71,7 @@ class Country {
 		}
 	}
 
-	def connectedCointryNames() {
+	def connectedCountryNames() {
 		val l = new ArrayList<String>()
 		this.connectedCountries.forEach [
 			l.add(it.name)
@@ -82,6 +85,18 @@ class Country {
 			l.add(it.getPlaceName())
 		]
 		return l
+	}
+	
+	def removeSelectedFeature(String string) {
+		this.features.remove(string)
+	}
+	
+	def removeSelectedConnection(Country country) {
+		this.connectedCountries.remove(country)
+	}
+	
+	def removeSelectedPlace(CommonPlace place) {
+		this.places.remove(place)
 	}
 	
 }

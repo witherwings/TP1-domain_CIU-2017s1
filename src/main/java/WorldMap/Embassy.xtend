@@ -3,7 +3,11 @@ package WorldMap
 import WorldMap.CommonPlace
 import People.Occupant
 import People.Villain
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Observable
+@Accessors
 class Embassy extends CommonPlace {
 
 	new (Occupant occupant) {

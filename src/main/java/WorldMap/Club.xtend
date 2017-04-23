@@ -5,7 +5,11 @@ import WorldMap.CommonPlace
 import People.Villain
 import java.util.List
 import java.util.Random
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 
+@Observable
+@Accessors
 class Club extends CommonPlace {
 
 	static val random = new Random

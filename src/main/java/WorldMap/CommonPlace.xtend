@@ -6,7 +6,7 @@ import People.Villain
 abstract class CommonPlace {
 	String information;
 	public Occupant occupant;
-
+	
 	new (Occupant occupant) {
 		this.occupant = occupant
 	}
