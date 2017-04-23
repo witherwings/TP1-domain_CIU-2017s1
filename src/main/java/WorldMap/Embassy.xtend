@@ -17,11 +17,6 @@ class Embassy extends CommonPlace {
 			return "Se fue para un pais que tiene "+ this.occupant.getClueDestination()
 		}
 	}
-	
-	override setInfoOccupant(Villain villano) {
-		this.occupant = new Informant(villano)
-	}
-
 
 	override getPlaceName() {
 		return "Embajada"

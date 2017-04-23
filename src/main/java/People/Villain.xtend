@@ -101,4 +101,8 @@ class Villain extends Occupant{
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
+	override getClueHobbies(int porcentaje) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
 }

@@ -2,6 +2,7 @@ package WorldMap
 
 import People.Occupant
 import People.Villain
+import People.Informant
 
 abstract class CommonPlace {
 	String information;
@@ -13,7 +14,9 @@ abstract class CommonPlace {
 	
 	def String giveInformation()
 	
-	def void setInfoOccupant(Villain villano)
+	def setInfoOccupant(Villain villano) {
+		this.occupant = new Informant(villano)
+	}
 
 	def String getPlaceName()
 	

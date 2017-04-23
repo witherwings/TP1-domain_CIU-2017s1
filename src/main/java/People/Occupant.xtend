@@ -15,4 +15,6 @@ abstract class Occupant {
 	
 	def String getClueDestination()
 	
+	def String getClueHobbies(int porcentaje)
+	
 }

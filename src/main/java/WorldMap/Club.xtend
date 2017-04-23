@@ -18,11 +18,6 @@ class Club extends CommonPlace {
 		return this.occupant.getClue()
 		//"2 clues about villain signs. 70% 1 clue about hobbies."
 	}
-	
-	override setInfoOccupant(Villain villano) {
-		occupant.setClue(villano)
-	}
-
 
 	override getPlaceName() {
 		return "Club"

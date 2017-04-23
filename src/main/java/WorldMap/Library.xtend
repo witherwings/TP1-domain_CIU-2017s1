@@ -2,7 +2,6 @@ package WorldMap
 
 import People.Occupant
 import WorldMap.CommonPlace
-import People.Villain
 
 class Library extends CommonPlace {
 
@@ -11,16 +10,11 @@ class Library extends CommonPlace {
 	}
 	
 	override giveInformation() {
-		return "1 clue about villain destination and 1 clue about villain signs. 
-				50% 1 clue about hobbies."
-	}
-	
-	override setInfoOccupant(Villain villano) {
-		occupant.setClue(villano)
+		return "Vi a alguien que se fue a un lugar que tiene "+ this.occupant.getClueDestination()+
+			" , ademas con "+ this.occupant.getClue()+ this.occupant.getClueHobbies(50)
 	}
 
 	override getPlaceName() {
 		return "Libreria"
 	}
-	
 }

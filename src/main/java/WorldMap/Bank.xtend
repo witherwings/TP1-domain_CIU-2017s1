@@ -13,13 +13,9 @@ class Bank extends CommonPlace {
 	
 	override giveInformation() {
 		if(this.occupant.isInformant()){
-			return "Vi una persona con "+ this.occupant.getClue() +
-			"y se fue para un pais que tiene "+ this.occupant.getClueDestination()
+			return "Vi una persona que "+ this.occupant.getClue() +
+			" y se fue para un pais que tiene "+ this.occupant.getClueDestination()
 		}
-	}
-	
-	override setInfoOccupant(Villain villano) {
-		this.occupant = new Informant(villano)
 	}
 
 	override getPlaceName() {

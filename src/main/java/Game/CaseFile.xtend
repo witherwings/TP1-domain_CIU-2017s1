@@ -40,9 +40,7 @@ class CaseFile {
 			cp.setInfoOccupant(this.responsible)
 		}
 		for(Country c : this.escapePlan){
-			for(CommonPlace p : c.getPlaces()){
-				p.setInfoOccupant(this.responsible)
-			}
+			c.visitedFor(this.responsible)
 		}
 	}
 	

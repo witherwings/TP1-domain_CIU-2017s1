@@ -32,8 +32,8 @@ class GameData {
 		this.v1 = new Villain(
                 "El Gato",
                 "Masculino",
-                #["Tiene pelo blanco", "Vive en el asilo de ancianos"],
-                #["Gatear", "Robar saxofones"])
+                #["Tiene pelo blanco"],//, "Vive en el asilo de ancianos"],
+                #["Gatear"])//, "Robar saxofones"])
         
         v1.addDestination(this.brasil)
         
