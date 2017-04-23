@@ -19,11 +19,16 @@ class EditHobbiesAppModel {
 		this.newHobbies  = new ArrayList<String>
 		this.villain = villain 
 		this.villain.hobbies.forEach [ this.newHobbies.add(it) ]
-		this.selectedHobbie = this.newHobbies.get(0)
+		if (this.newHobbies.size > 0) {
+			this.selectedHobbie = this.newHobbies.get(0)
+		}
 	}
 	
 	def addHobbie() {
 		this.newHobbies.add(currHobbie)
+		if (this.newHobbies.size == 1) {
+			this.selectedHobbie = this.newHobbies.get(0)
+		}
 	}
 	
 	def removeHobbie() {
