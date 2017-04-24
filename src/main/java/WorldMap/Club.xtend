@@ -15,8 +15,13 @@ class Club extends CommonPlace {
 	}
 		
 	override String giveInformation() {
-		return this.occupant.getClue()
-		//"2 clues about villain signs. 70% 1 clue about hobbies."
+		if(this.occupant.isInformant()){
+			return "Vi una persona que "+ 
+				this.occupant.getClue()+", y "+
+				this.occupant.getClue()+ this.occupant.getClueHobbies(70)
+		}else if(this.occupant.isKeeper){
+			return "Siga su camino"
+		}
 	}
 
 	override getPlaceName() {

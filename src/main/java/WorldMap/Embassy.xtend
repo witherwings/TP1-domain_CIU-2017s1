@@ -13,8 +13,10 @@ class Embassy extends CommonPlace {
 	
 	override giveInformation() {
 		if(this.occupant.isInformant()){
-			// Ver como hacer para devolver dos pistas sobre el destino
-			return "Se fue para un pais que tiene "+ this.occupant.getClueDestination()
+			return "Se fue para un pais que tiene "+ this.occupant.getClueDestination()+
+				" y "+this.occupant.getClueDestination()
+		}else if(this.occupant.isKeeper){
+			return "Siga su camino"
 		}
 	}
 

@@ -10,8 +10,12 @@ class Library extends CommonPlace {
 	}
 	
 	override giveInformation() {
-		return "Vi a alguien que se fue a un lugar que tiene "+ this.occupant.getClueDestination()+
-			" , ademas con "+ this.occupant.getClue()+ this.occupant.getClueHobbies(50)
+		if(this.occupant.isInformant()){
+			return "Vi a alguien que se fue a un lugar que tiene "+ this.occupant.getClueDestination()+
+				" , ademas "+ this.occupant.getClue()+ this.occupant.getClueHobbies(50)
+		}else if(this.occupant.isKeeper){
+			return "Siga su camino"
+		}
 	}
 
 	override getPlaceName() {

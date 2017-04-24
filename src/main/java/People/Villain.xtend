@@ -76,7 +76,7 @@ class Villain extends Occupant{
 		lista.get(random.nextInt(lista.size))
 	}
 	
-	def addDestination(WorldMap.Country country) {
+	def addDestination(Country country) {
 		this.destination = country
 	}
 	

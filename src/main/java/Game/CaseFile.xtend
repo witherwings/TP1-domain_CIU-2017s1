@@ -7,6 +7,7 @@ import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.ArrayList
 import WorldMap.CommonPlace
+import java.util.Random
 
 @Observable
 @Accessors
@@ -18,6 +19,8 @@ class CaseFile {
 	String report;
 	String stolenObject;
 	Country robberyCountry;
+	
+	static val random = new Random
 	
 	new(Villain resp, List<Country> escapePlan, String stolenObject, Country robCountry) {
 		this.responsible = resp
@@ -36,12 +39,20 @@ class CaseFile {
 	}
 	
 	def startCase() {
-		for(CommonPlace cp : this.robberyCountry.places){
-			cp.setInfoOccupant(this.responsible)
-		}
-		for(Country c : this.escapePlan){
-			c.visitedFor(this.responsible)
-		}
+		//Elige un pais random donde escapar
+		//this.responsible.addDestination(this.getRandomDestination())
+		//Pais destino: Chile
+		this.responsible.addDestination(this.escapePlan.get(0))
+		//Se va a ese pais
+		this.responsible.destination.visitedFor(this.responsible)
+	}
+	
+	def Country getRandomDestination() {
+		return randomIn(this.escapePlan)
+	}
+	
+	def static Country randomIn(List<Country> lista) {
+		lista.get(random.nextInt(lista.size))
 	}
 	
 	def checkSuspect(Villain villain) {

@@ -15,6 +15,8 @@ class Bank extends CommonPlace {
 		if(this.occupant.isInformant()){
 			return "Vi una persona que "+ this.occupant.getClue() +
 			" y se fue para un pais que tiene "+ this.occupant.getClueDestination()
+		}else if(this.occupant.isKeeper){
+			return "Siga su camino"
 		}
 	}
 

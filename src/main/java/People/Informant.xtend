@@ -45,7 +45,9 @@ class Informant extends Occupant {
 	
 	override getClueHobbies(int porcentaje) {
 		if(randomBetween(0, 100) > porcentaje){
-			return "Le gusta en sus tiempos libres "+ this.getRandomHobbies()
+			return ". Le gusta en sus tiempos libres "+ this.getRandomHobbies()
+		}else{
+			return "."
 		}
 	}
 	
