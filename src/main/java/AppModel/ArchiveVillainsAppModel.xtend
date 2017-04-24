@@ -1,9 +1,10 @@
 package AppModel
 
-import org.uqbar.commons.utils.Observable
-import org.eclipse.xtend.lib.annotations.Accessors
+import People.ArchiveVillain
 import People.Villain
 import java.util.List
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 import java.util.ArrayList
 
 @Observable
@@ -13,36 +14,20 @@ class ArchiveVillainsAppModel {
 	List<Villain> villains
 	Villain selectedVillain
 	
-	
 	new(){
-		val carmen = new Villain("Carmen Sandiego") =>[
-			setGender("Femenino")
-			addASign("Pelo rojo")
-			addASign("Maneja un convertible")
-			addASign("Posee un collar de rubies")
-			addASign("Comida favorita: Tacos")
-			addAHobbie("Juega tennis")
-		]
-		val ihor = new Villain("Ihor Ihorovich") =>[
-			setGender("Masculino")
-			addASign("Pelo rubio")
-			addASign("Maneja limosina")
-			addASign("Tatuaje en el brazo")
-			addASign("Habla ucraniano")
-			addAHobbie("Juega croquet")
-			addAHobbie("Le gusta cocinar")
-		]
-		
-		this.villains = new ArrayList<Villain>() =>[
-			add(carmen)
-			add(ihor)
-		]
-		
-		this.selectedVillain = carmen
+		this.villains = new ArrayList
 	}
 	
-	def addVillain(People.Villain villain) {
-		this.villains.add(villain)
+	def addVillain(Villain villain) {
+		ArchiveVillain.instance.addNewVillain(villain)
+	}
+	
+	def getArchiveVillain(){
+		ArchiveVillain.instance
+	}
+	
+	def updateList(){
+		this.villains = ArchiveVillain.instance.getVillains()
 	}
 	
 }

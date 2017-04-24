@@ -15,7 +15,6 @@ class WorldMap {
 	private static WorldMap instance = null
 	
 	new(){
-	//	countries = new ArrayList
 		val arg = new Country("Argentina", this) => [
             addFeature("Toman mate")
             addFeature("Hogar de Messi")

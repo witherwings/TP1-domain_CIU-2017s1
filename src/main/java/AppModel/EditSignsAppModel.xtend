@@ -11,7 +11,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class EditSignsAppModel {
 	
 	Villain villain
-	String currSign = "asd"
+	String currSign = ""
 	String selectedSign
 	List<String> newSigns
 	

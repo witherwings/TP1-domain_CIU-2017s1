@@ -11,7 +11,7 @@ import java.util.List
 class EditHobbiesAppModel {
 	
 	Villain villain
-	String currHobbie = "asd"
+	String currHobbie = ""
 	String selectedHobbie
 	List<String> newHobbies
 	
