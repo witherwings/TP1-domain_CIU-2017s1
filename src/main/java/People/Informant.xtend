@@ -64,4 +64,8 @@ class Informant extends Occupant {
 		random.nextInt(difference) + min
 	}
 	
+	override isVillain() {
+		return false
+	}
+	
 }

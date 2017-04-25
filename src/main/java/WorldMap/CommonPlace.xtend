@@ -19,5 +19,4 @@ abstract class CommonPlace {
 	}
 
 	def String getPlaceName()
-	
 }

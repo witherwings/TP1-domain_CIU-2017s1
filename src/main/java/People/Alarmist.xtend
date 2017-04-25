@@ -1,31 +1,29 @@
 package People
 
-import People.Occupant
-
-class Keeper extends Occupant {
-	
-	override takeAction() {
-		//Wrong country, pal
-	}
-	
-	override void setClue(Villain villano){
-		// hacer algo
-	}
+class Alarmist extends Occupant {
 	
 	override getClue() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		return "CUIDADOOO! El villano esta en la ciudad!"
 	}
 	
-	override isInformant(){
+	override isInformant() {
 		return false
 	}
 	
 	override isKeeper() {
-		return true
+		return false
 	}
 	
 	override isVillain() {
 		return false
+	}
+	
+	override takeAction() {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	override setClue(Villain villano) {
+		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
 	override getClueDestination() {

@@ -17,4 +17,6 @@ abstract class Occupant {
 	
 	def String getClueHobbies(int porcentaje)
 	
+	def boolean isVillain()
+	
 }

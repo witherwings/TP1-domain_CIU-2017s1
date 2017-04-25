@@ -12,11 +12,13 @@ class Bank extends CommonPlace {
 	}
 	
 	override giveInformation() {
-		if(this.occupant.isInformant()){
+		if(this.occupant.isVillain()){
+			return "ALTO! Detengase!" //Agregar lo de orden de arresto
+		}else if(this.occupant.isInformant()){
 			return "Vi una persona que "+ this.occupant.getClue() +
 			" y se fue para un pais que tiene "+ this.occupant.getClueDestination()
 		}else if(this.occupant.isKeeper){
-			return "Siga su camino"
+			return "Vuelva por donde vino"
 		}
 	}
 

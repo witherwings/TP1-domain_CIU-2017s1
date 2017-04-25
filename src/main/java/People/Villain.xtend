@@ -80,20 +80,24 @@ class Villain extends Occupant{
 		this.destination = country
 	}
 	
+	override isInformant() {
+		return false
+	}
+	
+	override isKeeper() {
+		return false
+	}
+	
+	override isVillain() {
+		return true
+	}
+	
 	// Fijarse bien esto
 	override setClue(Villain villano) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	
 	override String getClue() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-	
-	override isInformant() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-	
-	override isKeeper() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
 	}
 	

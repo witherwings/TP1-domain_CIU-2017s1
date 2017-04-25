@@ -20,7 +20,7 @@ class Club extends CommonPlace {
 				this.occupant.getClue()+", y "+
 				this.occupant.getClue()+ this.occupant.getClueHobbies(70)
 		}else if(this.occupant.isKeeper){
-			return "Siga su camino"
+			return "Vuelva por donde vino"
 		}
 	}
 

@@ -6,6 +6,7 @@ import People.Villain
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import java.util.Random
+import People.Alarmist
 
 @Observable
 @Accessors
@@ -17,6 +18,7 @@ class Country {
 	List<CommonPlace> places;
 	
 	static val random = new Random
+	Boolean thisTheVillain = false
 	
 	new (String name)
 	{
@@ -66,9 +68,11 @@ class Country {
 	}
 	
 	def visitedFor(Villain villano) {
+		this.thisTheVillain = true
 		for(CommonPlace place : this.places){
-			place.setInfoOccupant(villano)
+			place.occupant = new Alarmist()
 		}
+		this.places.get(2).occupant = villano		
 	}
 
 	def connectedCointryNames() {
@@ -87,7 +91,7 @@ class Country {
 		return l
 	}
 	
-	def String getRandomFeature() {
+	def  getRandomFeature() {
 		return randomIn(this.features)
 	}
 	

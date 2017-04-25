@@ -16,7 +16,7 @@ class Embassy extends CommonPlace {
 			return "Se fue para un pais que tiene "+ this.occupant.getClueDestination()+
 				" y "+this.occupant.getClueDestination()
 		}else if(this.occupant.isKeeper){
-			return "Siga su camino"
+			return "Vuelva por donde vino"
 		}
 	}
 

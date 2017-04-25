@@ -3,11 +3,16 @@ package Game
 import WorldMap.CommonPlace
 import WorldMap.Country
 import People.Villain
+import java.util.ArrayList
+import java.util.List
 
 class Player {
 	CaseFile game;
 	CommonPlace place
 	Country country
+	
+	Country prevCountry = null
+	List<Country> routePlayer = new ArrayList<Country>()
 
 	new (CaseFile game, Country startCountry) {
 		this.game = game
@@ -37,17 +42,24 @@ class Player {
 	}
 
 	def travelTo(Country c) {
-		this.country = c
-//		if (this.country.isConnectedTo(c)) {
-//			this.country = c
-//			this.place = null
-//		} else {
-//			// tirrar esesion!
-//		}
+		if(this.country.isConnectedTo(c)) {
+			this.prevCountry = this.country
+			this.routePlayer.add(this.prevCountry)
+			this.country = c
+			this.place = null
+		} else {
+			println("Este pais no tiene conexion con el actual, elige otro!")
+			// tirrar esesion!
+		}	
 	}
 	
 	def getInfo() {
-		return this.place.giveInformation()
+		if(this.country.getThisTheVillain()){
+			this.game.responsible.takeAction()
+			return this.place.giveInformation()
+		}else{
+			return this.place.giveInformation()
+		}
 	}
 	
 }

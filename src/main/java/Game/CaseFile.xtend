@@ -43,7 +43,16 @@ class CaseFile {
 		//this.responsible.addDestination(this.getRandomDestination())
 		//Pais destino: Chile
 		this.responsible.addDestination(this.escapePlan.get(0))
-		//Se va a ese pais
+		//Ponemos informantes por los paises donde ha pasado el villano
+		for(CommonPlace cp : this.robberyCountry.places){
+			cp.setInfoOccupant(this.responsible)
+ 		}
+ 		for(Country c : this.escapePlan){
+ 			for(CommonPlace p : c.getPlaces()){
+ 				p.setInfoOccupant(this.responsible)
+ 			}
+ 		}
+		//Se va a este pais
 		this.responsible.destination.visitedFor(this.responsible)
 	}
 	
