@@ -19,6 +19,8 @@ class Bank extends CommonPlace {
 			" y se fue para un pais que tiene "+ this.occupant.getClueDestination()
 		}else if(this.occupant.isKeeper){
 			return "Vuelva por donde vino"
+		}else{
+			return this.occupant.getClue()
 		}
 	}
 

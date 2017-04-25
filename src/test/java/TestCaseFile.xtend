@@ -55,7 +55,6 @@ class TestCaseFile extends TestCase {
     def testVisitChileAndAnEncounterWithVillain() {
     	/*
     	 * Visito un pais(Chile) con conexion, y ademas encuentro al villano.
-    	 * (((ME FALTO ALGO QUE NO SE QUE ES! MAÑANA SIGO !))
     	 */
     	this.jugador.travelTo(this.game.getCountry("Chile"))
     	this.jugador.visit(0)// visita el banco

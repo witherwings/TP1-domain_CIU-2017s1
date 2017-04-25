@@ -15,12 +15,16 @@ class Club extends CommonPlace {
 	}
 		
 	override String giveInformation() {
-		if(this.occupant.isInformant()){
+		if(this.occupant.isVillain()){
+			return "ALTO! Detengase!" //Agregar lo de orden de arresto
+		}else if(this.occupant.isInformant()){
 			return "Vi una persona que "+ 
 				this.occupant.getClue()+", y "+
 				this.occupant.getClue()+ this.occupant.getClueHobbies(70)
 		}else if(this.occupant.isKeeper){
 			return "Vuelva por donde vino"
+		}else{
+			return this.occupant.getClue()
 		}
 	}
 

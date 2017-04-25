@@ -97,6 +97,5 @@ class Country {
 	
 	def static String randomIn(List<String> lista) {
 		lista.get(random.nextInt(lista.size))
-	}
-	
+	}	
 }

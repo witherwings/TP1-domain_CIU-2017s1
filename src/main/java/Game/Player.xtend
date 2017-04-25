@@ -60,6 +60,5 @@ class Player {
 		}else{
 			return this.place.giveInformation()
 		}
-	}
-	
+	}	
 }
