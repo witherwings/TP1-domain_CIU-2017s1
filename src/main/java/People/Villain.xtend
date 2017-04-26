@@ -5,6 +5,8 @@ import java.util.ArrayList
 import java.util.Random
 import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
+import WorldMap.Country
+import WorldMap.CommonPlace
 
 @Observable
 @Accessors
@@ -13,6 +15,8 @@ class Villain extends Occupant{
 	String gender;
 	List<String> signs;
 	List<String> hobbies;
+	Country finalDestination;
+	CommonPlace finalPlace;
 	static val random = new Random
 	
 	new (String name, String gender, List<String> signs, List<String> hobbies)
@@ -78,7 +82,7 @@ class Villain extends Occupant{
 		lista.get(random.nextInt(lista.size))
 	}
 	
-	def selectedVillain() {
+	def Villain selectedVillain() {
 		return this.selectedVillain
 	}
 	
@@ -89,6 +93,20 @@ class Villain extends Occupant{
 	
 	override String getClue() {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	def setFinalDestination(Country finalC){
+		this.finalDestination = finalC
+		this.finalPlace = finalC.places.get(randomBetween(0,2))
+	}
+	
+	def static randomBetween(Integer min, Integer max) {
+		val difference = max - min + 1
+		random.nextInt(difference) + min
+	}
+	
+	def getName() {
+		this.name
 	}
 	
 }

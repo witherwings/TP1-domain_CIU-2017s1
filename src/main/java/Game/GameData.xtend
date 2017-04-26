@@ -59,6 +59,9 @@ class GameData {
 		arg.addCountry(usa)
 		usa.addCountry(nor)
 		nor.addCountry(arg)
+		egt.addCountry(usa)
+		egt.addCountry(arg)
+		egt.addCountry(nor)
 
 		return new ArrayList<Country>() => [
 			add(arg)

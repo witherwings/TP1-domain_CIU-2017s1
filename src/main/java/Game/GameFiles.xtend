@@ -21,9 +21,6 @@ class GameFiles {
 	new() {
 		val case1 = new CaseFile("Tumba Del Faraon") => [
 			addCountryRobbed(map.getCountryByName("Egipto"))
-			addCountryEscape(new Country("Marruecos", map))
-			addCountryEscape(new Country("España", map))
-			addCountryEscape(new Country("Francia", map))
 			addReport("A las 9 de la mañana en la ciudad del Cairo la comunidad científica fue conmovida al darse 
 			cuenta del faltante de gran valor! El sarcófago del faraón Usermaatra-Meriamón Ramsés-Heqaiunu, mejor 
 			conocido como Ramsés III. El criminal fue muy prolijo y la escena del crimen no contaba con pista alguna, 
@@ -31,13 +28,11 @@ class GameFiles {
 			addObjectRobbed("Tumba del faraón")
 
 			addVillain(ArchiveVillain.instance.getRandomVillain)
+			setEscapeRoute()
 		]
 
 		val case2 = new CaseFile("Tumba Del Faraon") => [
 			addCountryRobbed(map.getCountryByName("Egipto"))
-			addCountryEscape(new Country("Marruecos", map))
-			addCountryEscape(new Country("España", map))
-			addCountryEscape(new Country("Francia", map))
 			addReport("A las 9 de la mañana en la ciudad del Cairo la comunidad científica fue conmovida al darse 
 			cuenta del faltante de gran valor! El sarcófago del faraón Usermaatra-Meriamón Ramsés-Heqaiunu, mejor 
 			conocido como Ramsés III. El criminal fue muy prolijo y la escena del crimen no contaba con pista alguna, 
@@ -45,13 +40,12 @@ class GameFiles {
 			addObjectRobbed("Tumba del faraón")
 
 			addVillain(ArchiveVillain.instance.getRandomVillain)
+			setEscapeRoute()
+			
 		]
 
 		val case3 = new CaseFile("Tumba Del Faraon") => [
 			addCountryRobbed(map.getCountryByName("Egipto"))
-			addCountryEscape(new Country("Marruecos", map))
-			addCountryEscape(new Country("España", map))
-			addCountryEscape(new Country("Francia", map))
 			addReport("A las 9 de la mañana en la ciudad del Cairo la comunidad científica fue conmovida al darse 
 			cuenta del faltante de gran valor! El sarcófago del faraón Usermaatra-Meriamón Ramsés-Heqaiunu, mejor 
 			conocido como Ramsés III. El criminal fue muy prolijo y la escena del crimen no contaba con pista alguna, 
@@ -59,13 +53,11 @@ class GameFiles {
 			addObjectRobbed("Tumba del faraón")
 
 			addVillain(ArchiveVillain.instance.getRandomVillain)
+			setEscapeRoute()
 		]
 
 		val case4 = new CaseFile("Tumba Del Faraon") => [
 			addCountryRobbed(map.getCountryByName("Egipto"))
-			addCountryEscape(new Country("Marruecos", map))
-			addCountryEscape(new Country("España", map))
-			addCountryEscape(new Country("Francia", map))
 			addReport("A las 9 de la mañana en la ciudad del Cairo la comunidad científica fue conmovida al darse 
 			cuenta del faltante de gran valor! El sarcófago del faraón Usermaatra-Meriamón Ramsés-Heqaiunu, mejor 
 			conocido como Ramsés III. El criminal fue muy prolijo y la escena del crimen no contaba con pista alguna, 
@@ -73,13 +65,11 @@ class GameFiles {
 			addObjectRobbed("Tumba del faraón")
 
 			addVillain(ArchiveVillain.instance.getRandomVillain)
+			setEscapeRoute()
 		]
 
 		val case5 = new CaseFile("Tumba Del Faraon") => [
 			addCountryRobbed(map.getCountryByName("Egipto"))
-			addCountryEscape(new Country("Marruecos", map))
-			addCountryEscape(new Country("España", map))
-			addCountryEscape(new Country("Francia", map))
 			addReport("A las 9 de la mañana en la ciudad del Cairo la comunidad científica fue conmovida al darse 
 			cuenta del faltante de gran valor! El sarcófago del faraón Usermaatra-Meriamón Ramsés-Heqaiunu, mejor 
 			conocido como Ramsés III. El criminal fue muy prolijo y la escena del crimen no contaba con pista alguna, 
@@ -87,6 +77,7 @@ class GameFiles {
 			addObjectRobbed("Tumba del faraón")
 
 			addVillain(ArchiveVillain.instance.getRandomVillain)
+			setEscapeRoute()
 		]
 
 		this.caseFiles = new ArrayList<CaseFile>() => [

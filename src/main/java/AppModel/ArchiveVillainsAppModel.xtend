@@ -13,6 +13,8 @@ class ArchiveVillainsAppModel {
 	
 	List<Villain> villains
 	Villain selectedVillain
+	String warrant = "Orden aun no emitida"
+	
 	
 	new(){
 		this.villains = new ArrayList

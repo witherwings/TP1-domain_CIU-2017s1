@@ -10,6 +10,8 @@ class Informant extends Occupant {
 		this.clue = clue
 	}
 	
+	new() {}
+	
 	override setClue(Villain villano){
 		this.clue = "I saw a people with "+ villano.getRandomSign()
 	}

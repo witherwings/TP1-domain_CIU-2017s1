@@ -1,9 +1,7 @@
 package WorldMap
 
 import People.Occupant
-import WorldMap.CommonPlace
 import People.Villain
-import java.util.List
 import java.util.Random
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
