@@ -30,7 +30,11 @@ class ArchiveVillainsAppModel {
 	}
 	
 	def updateList(){
+		var actual = this.selectedVillain
+		this.villains = null
+		this.selectedVillain = null
 		this.villains = ArchiveVillain.instance.getVillains()
+		this.selectedVillain = actual
 	}
 	
 }
