@@ -21,8 +21,6 @@ class GameData {
 
 		this.acme_list.add(new Villain("R2D2", "Indefinido", #["Es robotico"], #["Vibrar (If you know what i mean)"]))
 
-	// mapamundi
-	// COMPLETAR
 	}
 
 	def acme_list(int index) {
