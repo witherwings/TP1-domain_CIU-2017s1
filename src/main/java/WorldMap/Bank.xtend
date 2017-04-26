@@ -21,7 +21,7 @@ class Bank extends CommonPlace {
 		val villain = cf.responsible
 		val nextCountry = cf.checkPossibleNextCountry		
 			
-		"Vi alguien como describe!" + villain.getRandomSign 
+		"Vi alguien como describe! " + villain.getRandomSign 
 			+ ". Recuerdo tambien que en su proximo destino " 
 			+ nextCountry.getRandomFeature
 	}

@@ -1,7 +1,5 @@
 package People
 
-import People.Occupant
-import WorldMap.Club
 import Game.CaseFile
 import WorldMap.CommonPlace
 

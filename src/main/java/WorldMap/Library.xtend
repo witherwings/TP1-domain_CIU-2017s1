@@ -25,10 +25,9 @@ class Library extends CommonPlace {
 		val nextCountry = cf.checkPossibleNextCountry
 
 		if (chance < 5)
-			lastClue = " y ademas "
-		villain.getRandomHobbie + "."
+			lastClue = " y ademas " + villain.getRandomHobbie + "."
 
-		"Vi alguien como describe!. Recuerdo que en su proximo destino " + nextCountry.getRandomFeature +
+		"Vi alguien como describe! Recuerdo que en su proximo destino " + nextCountry.getRandomFeature +
 			". Tambien recuerdo que " + villain.getRandomSign + lastClue
 	}
 

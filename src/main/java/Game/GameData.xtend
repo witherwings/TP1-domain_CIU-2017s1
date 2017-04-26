@@ -31,100 +31,100 @@ class GameData {
 
 	def static buildCountries(WorldMap worldMap) {
 		val egt = new Country("Egipto", worldMap) => [
-			addFeature("Hace calor")
-			addFeature("Mucha arena")
-			addFeature("Hay una edificacion muy conocida alli")
+			addFeature("hace calor")
+			addFeature("hay mucha arena")
+			addFeature("hay una edificacion muy conocida alli")
 			addPlace(new Bank(new Keeper))
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Library(new Keeper))
 		]
 		
 		val ita = new Country("Italia", worldMap) => [
-			addFeature("Sus calles son angostas")
-			addFeature("Hogar de la pizza")
-			addFeature("Hay una edificacion muy conocida alli")
-			addFeature("No querras que erupcione su volcan")
+			addFeature("tiene calles que son muy angostas")
+			addFeature("es el hogar de la pizza")
+			addFeature("hay una edificacion muy conocida alli")
+			addFeature("no querras que erupcione su volcan")
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Club(new Keeper))
 			addPlace(new Bank(new Keeper))
 		]
 		
 		val fra = new Country("Francia", worldMap) => [
-			addFeature("Usan mucho perfume")
-			addFeature("Hay una edificacion muy conocida alli")
-			addFeature("Lugar perfecto para comer baguettes")
+			addFeature("las personas usan mucho perfume")
+			addFeature("hay una edificacion muy conocida alli")
+			addFeature("es el lugar perfecto para comer baguettes")
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
 		]
 		
 		val chi = new Country("China", worldMap) => [
-			addFeature("Inmensa cultura")
-			addFeature("Mucha poblacion")
-			addFeature("Hay una edificacion muy conocida alli")
-			addFeature("Muy tradicionales")
+			addFeature("posee una inmensa cultura")
+			addFeature("tiene mucha poblacion")
+			addFeature("hay una edificacion muy conocida alli")
+			addFeature("son personas muy tradicionales")
 			addPlace(new Library(new Keeper))
 			addPlace(new Bank(new Keeper))
 			addPlace(new Club(new Keeper))
 		]
 		
 		val mex = new Country("Mexico", worldMap) => [
-			addFeature("Comidas sabrosas")
-			addFeature("Gente amable")
-			addFeature("Lugar perfecto para tomar aguas frescas")
+			addFeature("tienen comidas sabrosas")
+			addFeature("hay gente amable")
+			addFeature("es el lugar perfecto para tomar aguas frescas")
 			addPlace(new Library(new Keeper))
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Club(new Keeper))
 		]
 		
 		val usa = new Country("Estados Unidos", worldMap) => [
-			addFeature("Comidas grasosas")
-			addFeature("Lugar perfecto para conseguir armas")
-			addFeature("Libertad al alcance de la mano")
-			addFeature("Cuna de la obesidad")
+			addFeature("tienen comidas grasosas")
+			addFeature("es el lugar perfecto para conseguir armas")
+			addFeature("podes conseguir libertad al alcance de la mano")
+			addFeature("es la cuna de la obesidad")
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
 			addPlace(new Embassy(new Keeper))
 		]
 		val mar = new Country("Marruecos", worldMap) => [
-			addFeature("Hermosas telas")
-			addFeature("Gente amable")
-			addFeature("Hace calor")
-			addFeature("Muy tradicionales")
+			addFeature("hacen hermosas telas")
+			addFeature("hay gente amable")
+			addFeature("hace calor")
+			addFeature("son personas muy tradicionales")
 			addPlace(new Club(new Keeper))
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Bank(new Keeper))
 		]
 		val jap = new Country("Japon", worldMap) => [
-			addFeature("Muy tradiconales")
-			addFeature("Grandes edificaciones")
-			addFeature("Mucha poblacion")
+			addFeature("son perosnas muy tradiconales")
+			addFeature("posee grandes edificaciones")
+			addFeature("tiene mucha poblacion")
 			addPlace(new Library(new Keeper))
 			addPlace(new Bank(new Keeper))
 			addPlace(new Club(new Keeper))
 		]
 		val ale = new Country("Alemania", worldMap) => [
-			addFeature("Gente amable")
-			addFeature("Idioma dificil de aprender")
-			addFeature("Grandes edificaciones")
+			addFeature("hay gente amable")
+			addFeature("su idioma dificil de aprender")
+			addFeature("posee grandes edificaciones")
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
 		]
 		val bul = new Country("Bulgaria", worldMap) => [
-			addFeature("Comidas sabrosas")
-			addFeature("Gente amable")
-			addFeature("Lugar perfecto para comer chocolate")
-			addFeature("Hermosos paisajes")
+			addFeature("tienen comidas sabrosas")
+			addFeature("hay gente amable")
+			addFeature("es el lugar perfecto para comer chocolate")
+			addFeature("cuenta con hermosos paisajes")
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
 			addPlace(new Club(new Keeper))
 		]
 		val per = new Country("Peru", worldMap) => [
-			addFeature("Hay una edificacion muy conocida alli")
-			addFeature("Hermosos paisajes")
-			addFeature("Gente amable")
-			addFeature("Sus calles son angostas")
+			addFeature("hay una edificacion muy conocida alli")
+			addFeature("cuenta con hermosos paisajes")
+			addFeature("hay gente amable")
+			addFeature("tiene calles que son muy angostas")
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))

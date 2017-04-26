@@ -1,9 +1,8 @@
 package AppModel
 
 import People.Villain
-import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
-import org.uqbar.arena.widgets.TextBox
+import org.uqbar.commons.utils.Observable
 
 @Observable
 @Accessors

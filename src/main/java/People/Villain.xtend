@@ -1,14 +1,12 @@
 package People
 
-import java.util.List
-import java.util.ArrayList
-import java.util.Random
-import org.uqbar.commons.utils.Observable
-import org.eclipse.xtend.lib.annotations.Accessors
-import WorldMap.Country
-import WorldMap.CommonPlace
-import WorldMap.Club
 import Game.CaseFile
+import WorldMap.CommonPlace
+import WorldMap.Country
+import java.util.ArrayList
+import java.util.List
+import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.utils.Observable
 import utils.Randoms
 
 @Observable

@@ -26,7 +26,7 @@ class Club extends CommonPlace {
 		if (chance <= 7)
 			lastClue = " y ademas " + villain.getRandomHobbie + "."
 
-		"Vi alguien como describe!" + villain.getRandomSign + ". Recuerdo tambien que " + villain.getRandomSign +
+		"Vi alguien como describe!  Creo que " + villain.getRandomSign + ". Recuerdo tambien que " + villain.getRandomSign +
 			lastClue
 	}
 

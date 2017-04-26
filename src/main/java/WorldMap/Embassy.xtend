@@ -20,7 +20,7 @@ class Embassy extends CommonPlace {
 	override getClue(CaseFile cf) {
 		val nextCountry = cf.checkPossibleNextCountry		
 			
-		"Vi alguien como describe!. Recuerdo que en su proximo destino " 
+		"Vi alguien como describe! Recuerdo que en su proximo destino " 
 			+ nextCountry.getRandomFeature + " y tambien que " + nextCountry.getRandomFeature
 	}
 	

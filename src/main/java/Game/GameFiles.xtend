@@ -1,12 +1,6 @@
 package Game
 
-<<<<<<< Updated upstream
-import org.eclipse.xtend.lib.annotations.Accessors
-import org.uqbar.commons.utils.Observable
-import java.util.List
-=======
 import People.ArchiveVillain
->>>>>>> Stashed changes
 import WorldMap.WorldMap
 import java.util.ArrayList
 import java.util.List

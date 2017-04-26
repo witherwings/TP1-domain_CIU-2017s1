@@ -6,6 +6,7 @@ import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import utils.Randoms
+import People.Villain
 
 @Observable
 @Accessors
@@ -98,6 +99,11 @@ class Country {
 
 	def String getRandomFeature() {
 		return Randoms.randomIn(this.features)
+	}
+	
+	def setVillainInPlace(Villain villain) {
+		val randomPlace = Randoms.randomBetween(0,2)
+		this.places.get(randomPlace).setOccupant(villain)
 	}
 
 }

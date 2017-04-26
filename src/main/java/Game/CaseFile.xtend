@@ -21,9 +21,9 @@ class CaseFile {
 	Country robberyCountry;
 
 	ArchiveVillainsAppModel archives = new ArchiveVillainsAppModel;
-	Country currentCountry;
-	Country lastCountry;
-	Country nextCountry;
+	Country currentCountry = null;
+	Country lastCountry = null;
+	Country nextCountry = null;
 	List<Country> failedDestinations
 	List<Country> criminalDestinations
 
@@ -73,14 +73,20 @@ class CaseFile {
 	}
 
 	def setEscapeRoute() {
-		var iterationCountries = 2 // randomBetween(5,10)
+		var iterationCountries = Randoms.randomBetween(3,9)
 		var lastCountry = this.robberyCountry
 		while (iterationCountries > 0) {
 			this.addCountryEscape(lastCountry)
 			lastCountry.setInformants()
-			val next = Randoms.randomBetween(0, ((lastCountry.connectedCountries.size) - 1))
-			lastCountry = lastCountry.connectedCountries.get(next)
-			iterationCountries--
+			if(iterationCountries == 1){
+				lastCountry.setVillainInPlace(this.responsible)
+				iterationCountries--
+				}
+			else{
+				val next = Randoms.randomBetween(0, ((lastCountry.connectedCountries.size) - 1))
+				lastCountry = lastCountry.connectedCountries.get(next)
+				iterationCountries--
+			}
 		}
 		this.responsible.setFinalDestination(lastCountry)
 	}
@@ -100,7 +106,7 @@ class CaseFile {
 		var index = 0
 		while (index < connections.size) {
 			if (this.escapePlan.contains(connections.get(index)))
-				connections.get(index)
+				return connections.get(index)
 			else
 				index++
 		}
