@@ -7,32 +7,32 @@ package AppModel
 
 import WorldMap.Country
 import WorldMap.WorldMap
-import java.util.ArrayList
-import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.model.ObservableUtils
 import org.uqbar.commons.utils.Observable
 
 @Observable
 @Accessors
 class WorldMapAppModel {
-
-    List<Country> countries
+	
     Country selectedCountry
-
-    new () {
-    	this.countries = new ArrayList
-    }
     
     def getWorldMap(){
     	WorldMap.instance
     }
     
     def updateList(){
-    	var currentConuntry = this.selectedCountry
-    	countries = null
-    	selectedCountry = null
-    	countries = WorldMap.instance.getCountries()
-    	selectedCountry = currentConuntry
+    	ObservableUtils.firePropertyChanged(this, "countries")
+    	ObservableUtils.firePropertyChanged(this, "selectedCountry")
+//    	var currentConuntry = this.selectedCountry
+//    	countries = null
+//    	selectedCountry = null
+//    	countries = WorldMap.instance.getCountries()
+//    	selectedCountry = currentConuntry
+    }
+    
+    def getCountries(){
+    	WorldMap.instance.getCountries()
     }
 	
 	def addCountry(Country country) {

@@ -75,7 +75,7 @@ class CaseFile {
 	}
 
 	def setEscapeRoute() {
-		var iterationCountries = Randoms.randomBetween(3, 9)
+		var iterationCountries = 2 //Randoms.randomBetween(3, 9)
 		var lastCountry = this.robberyCountry
 		while (iterationCountries > 0) {
 			this.addCountryEscape(lastCountry)
