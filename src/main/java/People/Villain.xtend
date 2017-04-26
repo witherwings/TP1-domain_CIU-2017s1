@@ -53,11 +53,11 @@ class Villain extends Occupant {
 	}
 
 	def String getRandomSign() {
-		return randomIn(this.signs)
+		return Randoms.randomIn(this.signs)
 	}
 
 	def getRandomHobbie() {
-		return randomIn(this.hobbies)
+		return Randoms.randomIn(this.hobbies)
 	}
 
 	def signsInfo() {
@@ -74,10 +74,6 @@ class Villain extends Occupant {
 			result.add(it)
 		]
 		return result
-	}
-
-	def static String randomIn(List<String> lista) {
-		lista.get(Randoms.nextInt(lista.size))
 	}
 
 	def Villain selectedVillain() {
