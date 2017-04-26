@@ -28,25 +28,9 @@ class WorldMap {
 		this.countries
 	}
 
-//	def Country getCountryByName(String name) {
-//		this.countries.findFirst[name == name]
-//	}
-	
 	def Country getCountryByName(String name) {
-		var i = 0 as int
-		var result = null as Country
-		while(i < this.countries.size){
-			if(this.countries.get(i).name == name){
-				result = this.countries.get(i)
-				return result
-			}
-			else{
-				i++
-			}
-		}
-		return result
-	}
-	
+		this.countries.filter[country|country.name == name].get(0)
+	}	
 
 	def addCountry(Country country) {
 		this.countries.add(country)

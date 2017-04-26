@@ -73,11 +73,7 @@ class Villain extends Occupant {
 		]
 		return result
 	}
-
-	def Villain selectedVillain() {
-		return this.selectedVillain
-	}
-
+	
 	def setFinalDestination(Country finalC) {
 		this.finalDestination = finalC
 		this.finalPlace = finalC.places.get(Randoms.randomBetween(0, 2))
