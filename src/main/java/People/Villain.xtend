@@ -85,7 +85,6 @@ class Villain extends Occupant {
 	}
 
 	def setFinalDestination(Country finalC) {
-
 		this.finalDestination = finalC
 		this.finalPlace = finalC.places.get(Randoms.randomBetween(0, 2))
 	}

@@ -21,7 +21,7 @@ class CaseFile {
 	Country robberyCountry;
 
 	ArchiveVillainsAppModel archives = new ArchiveVillainsAppModel;
-	Country actualCountry;
+	Country currentCountry;
 	Country lastCountry;
 	Country nextCountry;
 	List<Country> failedDestinations
@@ -57,7 +57,7 @@ class CaseFile {
 
 	def addCountryRobbed(Country country) {
 		this.robberyCountry = country
-		this.actualCountry = country
+		this.currentCountry = country
 	}
 
 	def addCountryEscape(Country country) {
@@ -96,7 +96,7 @@ class CaseFile {
 	}
 
 	def Country getCheckPossibleNextCountry() {
-		val connections = this.actualCountry.connectedCountries
+		val connections = this.currentCountry.connectedCountries
 		var index = 0
 		while (index < connections.size) {
 			if (this.escapePlan.contains(connections.get(index)))
@@ -105,6 +105,13 @@ class CaseFile {
 				index++
 		}
 		null
+	}
+
+	/**
+	 * retorna el último país de la lista de escape
+	 */
+	def Country escapePlanFinalCountry(){
+		escapePlan.get(escapePlan.size - 1)
 	}
 
 }
