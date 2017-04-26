@@ -7,6 +7,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import utils.Randoms
 import People.Villain
+import org.uqbar.commons.model.UserException
 
 @Observable
 @Accessors
@@ -46,7 +47,7 @@ class Country {
 		if (places.size < 3) {
 			this.places.add(newPlace);
 		} else {
-			// throw ("No more places allowed");
+			throw new UserException("No se permiten mas lugares.")
 		}
 	}
 
