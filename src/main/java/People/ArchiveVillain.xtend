@@ -22,6 +22,7 @@ class ArchiveVillain {
 			addASign("Posee un collar de rubies")
 			addASign("Comida favorita: Tacos")
 			addAHobbie("Juega tennis")
+			addAHobbie("Eludir a la policia")
 		]
 		val igor = new Villain("Igor Igorovich") => [
 			setGender("Masculino")
@@ -32,12 +33,42 @@ class ArchiveVillain {
 			addAHobbie("Juega croquet")
 			addAHobbie("Le gusta cocinar")
 		]
+<<<<<<< Updated upstream
 
 		val alcapone = new Villain("Al Capone") => []
 		val betty = new Villain("Betty Chiars") => []
 		val vic = new Villain("Vic La Mancha") => []
 
 		this.villains = new ArrayList<Villain>() => [
+=======
+		
+		val alcapone = new Villain("Al Capone") =>[
+			setGender("Masculino")
+			addASign("Cicatriz en el lado izquierdo")
+			addASign("Maneja un auto negro")
+			addASign("Tiene secuaces")
+			addAHobbie("Tirar personas al rio atadas a bloques de cemento")
+			addAHobbie("Practicas de tiro")
+		]
+		val betty = new Villain("Betty Chiars") =>[
+			setGender("Femenino")
+			addASign("Pelo rubio")
+			addASign("Le gusta el deporte")
+			addASign("Atractiva")
+			addAHobbie("Hace yoga")
+			addAHobbie("Practica artes marciales")
+		]
+		val vic = new Villain("Vic La Mancha") =>[
+			setGender("Masculino")
+			addASign("Tiene olor a aceite de autos")
+			addASign("Siempre lleva un cuchillo en su cinturon")
+			addASign("Alto y flaco")
+			addAHobbie("Tallar arboles")
+			addAHobbie("Juega tennis")
+		]
+		
+		this.villains = new ArrayList<Villain>() =>[
+>>>>>>> Stashed changes
 			add(carmen)
 			add(igor)
 			add(alcapone)
