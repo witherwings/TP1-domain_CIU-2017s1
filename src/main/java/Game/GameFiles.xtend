@@ -3,8 +3,6 @@ package Game
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import java.util.List
-import People.Villain
-import WorldMap.Country
 import WorldMap.WorldMap
 import java.util.ArrayList
 import People.ArchiveVillain

@@ -9,61 +9,57 @@ import WorldMap.Country
 import WorldMap.CommonPlace
 import WorldMap.Club
 import Game.CaseFile
+import utils.Randoms
 
 @Observable
 @Accessors
-class Villain extends Occupant{
+class Villain extends Occupant {
 	String name;
 	String gender;
 	List<String> signs;
 	List<String> hobbies;
 	Country finalDestination;
 	CommonPlace finalPlace;
-	static val random = new Random
-	
-	new (String name, String gender, List<String> signs, List<String> hobbies)
-	{
+
+	new(String name, String gender, List<String> signs, List<String> hobbies) {
 		this.name = name;
 		this.gender = gender;
 		this.signs = signs
 		this.hobbies = hobbies
 	}
-	
+
 	new(String name) {
 		this.name = name
 		this.signs = new ArrayList()
 		this.hobbies = new ArrayList()
 	}
-	
+
 	new() {
 		this.name = ""
 		this.signs = new ArrayList()
 		this.hobbies = new ArrayList()
 	}
-	
-	def void setGender(String gender)
-	{
+
+	def void setGender(String gender) {
 		this.gender = gender
 	}
-	
-	def void addASign(String newSign)
-	{
+
+	def void addASign(String newSign) {
 		this.signs.add(newSign);
 	}
-	
-	def void addAHobbie(String newHobbie)
-	{
+
+	def void addAHobbie(String newHobbie) {
 		this.hobbies.add(newHobbie);
 	}
-	
+
 	def String getRandomSign() {
 		return randomIn(this.signs)
 	}
-	
+
 	def getRandomHobbie() {
 		return randomIn(this.hobbies)
 	}
-	
+
 	def signsInfo() {
 		val result = new ArrayList<String>()
 		this.signs.forEach [
@@ -79,34 +75,29 @@ class Villain extends Occupant{
 		]
 		return result
 	}
-	
+
 	def static String randomIn(List<String> lista) {
-		lista.get(random.nextInt(lista.size))
+		lista.get(Randoms.nextInt(lista.size))
 	}
-	
+
 	def Villain selectedVillain() {
 		return this.selectedVillain
 	}
-	
-	def setFinalDestination(Country finalC){
+
+	def setFinalDestination(Country finalC) {
+
 		this.finalDestination = finalC
-		this.finalPlace = finalC.places.get(randomBetween(0,2))
+		this.finalPlace = finalC.places.get(Randoms.randomBetween(0, 2))
 	}
-	
-	def static randomBetween(Integer min, Integer max) {
-		val difference = max - min + 1
-		random.nextInt(difference) + min
-	}
-	
+
 	def getName() {
 		this.name
 	}
-	
+
 	override getClue(CaseFile file, CommonPlace place) {
 		"ALTO!! Detengase: " + this.name
 	}
-	
-	override isVillain() {true}
-	
-	
+
+	override isVillain() { true }
+
 }
