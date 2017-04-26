@@ -22,15 +22,15 @@ class TestCaseFile extends TestCase {
 
         val arg = new Country("Argentina", map)
 
-        arg.addPlace(new Bank(new Informant("se fue para peru")))
-        arg.addPlace(new Club(new Informant("")))
-        arg.addPlace(new Embassy(new Informant("")))
+        arg.addPlace(new Bank(new Informant))
+        arg.addPlace(new Club(new Informant))
+        arg.addPlace(new Embassy(new Informant))
 
         val per = new Country("Peru", map)
 
-        per.addPlace(new Bank(new Informant("se fue para el congo")))
-        per.addPlace(new Club(new Informant("")))
-        per.addPlace(new Embassy(new Informant("")))
+        per.addPlace(new Bank(new Informant))
+        per.addPlace(new Club(new Informant))
+        per.addPlace(new Embassy(new Informant))
 
         val escapePlan = new ArrayList<Country>();
         escapePlan.add(arg)

@@ -29,31 +29,31 @@ class GameData {
 		val arg = new Country("Argentina", worldMap) => [
 			addFeature("Toman mate")
 			addFeature("Hogar de Messi")
-			addPlace(new Bank(new Informant("una pista")))
-			addPlace(new Embassy(new Informant("una pista")))
-			addPlace(new Library(new Informant("una pista")))
+			addPlace(new Bank(new Informant))
+			addPlace(new Embassy(new Informant))
+			addPlace(new Library(new Informant))
 		]
 		val usa = new Country("Estados Unidos", worldMap) => [
 			addFeature("Esta Donald Trump")
 			addFeature("Super bowl")
-			addPlace(new Bank(new Informant("una pista")))
-			addPlace(new Embassy(new Informant("una pista")))
-			addPlace(new Library(new Informant("una pista")))
+			addPlace(new Bank(new Informant))
+			addPlace(new Embassy(new Informant))
+			addPlace(new Library(new Informant))
 
 		]
 		val nor = new Country("Noruega", worldMap) => [
 			addFeature("Hace frio")
 			addFeature("Altas rubias")
-			addPlace(new Bank(new Informant("una pista")))
-			addPlace(new Embassy(new Informant("una pista")))
-			addPlace(new Club(new Informant("una pista")))
+			addPlace(new Bank(new Informant))
+			addPlace(new Embassy(new Informant))
+			addPlace(new Club(new Informant))
 		]
 		val egt = new Country("Egipto", worldMap) => [
 			addFeature("Toman mate")
 			addFeature("Hogar de Messi")
-			addPlace(new Bank(new Informant("una pista")))
-			addPlace(new Embassy(new Informant("una pista")))
-			addPlace(new Library(new Informant("una pista")))
+			addPlace(new Bank(new Informant))
+			addPlace(new Embassy(new Informant))
+			addPlace(new Library(new Informant))
 		]
 
 		arg.addCountry(usa)

@@ -7,6 +7,8 @@ import org.uqbar.commons.utils.Observable
 import org.eclipse.xtend.lib.annotations.Accessors
 import WorldMap.Country
 import WorldMap.CommonPlace
+import WorldMap.Club
+import Game.CaseFile
 
 @Observable
 @Accessors
@@ -54,12 +56,12 @@ class Villain extends Occupant{
 		this.hobbies.add(newHobbie);
 	}
 	
-	override takeAction() {
-		//Shoots detective
-	}
-	
 	def String getRandomSign() {
 		return randomIn(this.signs)
+	}
+	
+	def getRandomHobbie() {
+		return randomIn(this.hobbies)
 	}
 	
 	def signsInfo() {
@@ -86,15 +88,6 @@ class Villain extends Occupant{
 		return this.selectedVillain
 	}
 	
-	// Fijarse bien esto
-	override setClue(Villain villano) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-	
-	override String getClue() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-	
 	def setFinalDestination(Country finalC){
 		this.finalDestination = finalC
 		this.finalPlace = finalC.places.get(randomBetween(0,2))
@@ -108,5 +101,12 @@ class Villain extends Occupant{
 	def getName() {
 		this.name
 	}
+	
+	override getClue(CaseFile file, CommonPlace place) {
+		"ALTO!! Detengase: " + this.name
+	}
+	
+	override isVillain() {true}
+	
 	
 }

@@ -102,4 +102,16 @@ class CaseFile {
 			this.criminalDestinations.add(country)
 	}
 	
+	def Country getCheckPossibleNextCountry() {
+		val connections = this.actualCountry.connectedCountries
+		var index = 0
+		while(index < connections.size){
+			if(this.escapePlan.contains(connections.get(index)))
+				connections.get(index)
+			else
+				index++
+		}
+		null
+	}
+	
 }

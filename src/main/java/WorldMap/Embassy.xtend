@@ -1,8 +1,7 @@
 package WorldMap
 
-import WorldMap.CommonPlace
+import Game.CaseFile
 import People.Occupant
-import People.Villain
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 
@@ -14,17 +13,15 @@ class Embassy extends CommonPlace {
 		super(occupant)
 	}
 	
-	override giveInformation() {
-		return "2 clues about villain destination"
-	}
-	
-	override setInfoOccupant(Villain villano) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
-
-
 	override getPlaceName() {
 		return "Embajada"
+	}
+	
+	override getClue(CaseFile cf) {
+		val nextCountry = cf.checkPossibleNextCountry		
+			
+		"Vi alguien como describe!. Recuerdo que en su proximo destino " 
+			+ nextCountry.getRandomFeature + " y tambien que " + nextCountry.getRandomFeature
 	}
 	
 }

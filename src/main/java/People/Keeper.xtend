@@ -1,19 +1,16 @@
 package People
 
 import People.Occupant
+import WorldMap.Club
+import Game.CaseFile
+import WorldMap.CommonPlace
 
 class Keeper extends Occupant {
 	
-	override takeAction() {
-		//Wrong country, pal
+	override getClue(CaseFile file, CommonPlace place) {
+		"Lo siento, creo que se ha equivocado de Ciudad; no hay nadie con esas caracteristicas"
 	}
 	
-	override void setClue(Villain villano){
-		// hacer algo
-	}
-	
-	override getClue() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
-	}
+	override isVillain() {false}
 	
 }

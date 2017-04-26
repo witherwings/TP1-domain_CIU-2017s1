@@ -1,27 +1,20 @@
 package People
 
 import People.Occupant
+import WorldMap.Club
+import Game.CaseFile
+import WorldMap.CommonPlace
 
 class Informant extends Occupant {
-
-	String clue
-
-	new (String clue) {
-		this.clue = clue
+	
+	override getClue(CaseFile file, CommonPlace place) {
+		
+		if(file.actualCountry == file.escapePlan.get(file.escapePlan.size - 1))
+			"CUIDADO DETECTIVE!! Ha estado a punto de caer en una trampa. La persona que busca esta en la ciudad."
+		else
+			place.getClue(file)
 	}
 	
-	new() {}
-	
-	override setClue(Villain villano){
-		this.clue = "I saw a people with "+ villano.getRandomSign()
-	}
-	
-	override takeAction() {
-		//Gives clues depending on the place.
-	}
-	
-	override String getClue() {
-		return this.clue
-	}
+	override isVillain() {false}
 	
 }

@@ -1,10 +1,12 @@
 package People
 
+import Game.CaseFile
+import WorldMap.CommonPlace
+
 abstract class Occupant {
-	def void takeAction()
+		
+	def String getClue(CaseFile file, CommonPlace place)
 	
-	def void setClue(Villain villano)
-	
-	def String getClue()
+	def boolean isVillain()
 	
 }

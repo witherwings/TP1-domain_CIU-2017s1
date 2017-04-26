@@ -1,27 +1,23 @@
 package WorldMap
 
-import People.Occupant
-import People.Villain
+import Game.CaseFile
 import People.Keeper
-import People.Informant
+import People.Occupant
 
 abstract class CommonPlace {
-	String information;
 	public Occupant occupant;
 	
 	new (Occupant occupant) {
 		this.occupant = new Keeper()
 	}
 	
-	def String giveInformation()
-	
-	def void setInfoOccupant(Villain villano)
-
-	def String getPlaceName()
-	
 	def void setOccupant(Occupant occ)
 	{
 		this.occupant = occ
 	}
+	
+	def String getPlaceName()
+	
+	def String getClue(CaseFile cf)
 	
 }

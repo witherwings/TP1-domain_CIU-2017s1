@@ -1,11 +1,11 @@
 package WorldMap
 
-import java.util.List
+import People.Informant
 import java.util.ArrayList
-import People.Villain
+import java.util.List
+import java.util.Random
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
-import People.Informant
 
 @Observable
 @Accessors
@@ -16,6 +16,8 @@ class Country {
 	List<Country> connectedCountries;
 	//There are only 3 places per country
 	List<CommonPlace> places;
+	
+	static val random = new Random
 	
 	new (String name, WorldMap map)
 	{
@@ -65,12 +67,6 @@ class Country {
 	def getPlace(int index) {
 		return this.places.get(index)
 	}
-	
-	def visitedFor(Villain villano) {
-		for(CommonPlace place : this.places){
-			place.setInfoOccupant(villano)
-		}
-	}
 
 	def connectedCountryNames() {
 		val l = new ArrayList<String>()
@@ -107,4 +103,11 @@ class Country {
 		}
 	}
 	
+	def String getRandomFeature(){
+		return randomIn(this.features)
+	}
+	
+	def static String randomIn(List<String> lista) {
+		lista.get(random.nextInt(lista.size))
+	}
 }

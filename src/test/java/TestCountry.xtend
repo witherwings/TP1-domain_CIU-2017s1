@@ -22,7 +22,7 @@ class TestCountry extends TestCase{
                 #["hair white", "mustache"],
                 #["Crawl", "Steal saxophones"])
                 
-    Informant informante = new Informant("I no saw nothing")
+    Informant informante = new Informant
    	Keeper cuidador = new Keeper()
    	
    	Bank banco = new Bank(informante)
