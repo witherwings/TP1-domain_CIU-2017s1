@@ -36,6 +36,7 @@ class CaseFile {
 		this.escapePlan = escapePlan
 		this.stolenObject = stolenObject
 		this.robberyCountry = robCountry
+		this.currentCountry = robCountry
 
 		this.archives.updateList()
 		this.failedDestinations = new ArrayList()
@@ -45,6 +46,7 @@ class CaseFile {
 	new(String caseName) {
 		this.caseName = caseName
 		this.escapePlan = new ArrayList()
+		this.responsible = new Villain
 
 		this.archives.updateList()
 		this.failedDestinations = new ArrayList()
@@ -73,16 +75,15 @@ class CaseFile {
 	}
 
 	def setEscapeRoute() {
-		var iterationCountries = Randoms.randomBetween(3,9)
+		var iterationCountries = Randoms.randomBetween(3, 9)
 		var lastCountry = this.robberyCountry
 		while (iterationCountries > 0) {
 			this.addCountryEscape(lastCountry)
 			lastCountry.setInformants()
-			if(iterationCountries == 1){
+			if (iterationCountries == 1) {
 				lastCountry.setVillainInPlace(this.responsible)
 				iterationCountries--
-				}
-			else{
+			} else {
 				val next = Randoms.randomBetween(0, ((lastCountry.connectedCountries.size) - 1))
 				lastCountry = lastCountry.connectedCountries.get(next)
 				iterationCountries--
@@ -116,7 +117,7 @@ class CaseFile {
 	/**
 	 * retorna el último país de la lista de escape
 	 */
-	def Country escapePlanFinalCountry(){
+	def Country escapePlanFinalCountry() {
 		escapePlan.get(escapePlan.size - 1)
 	}
 

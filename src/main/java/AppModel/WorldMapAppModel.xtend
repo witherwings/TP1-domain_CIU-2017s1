@@ -28,7 +28,11 @@ class WorldMapAppModel {
     }
     
     def updateList(){
+    	var currentConuntry = this.selectedCountry
+    	countries = null
+    	selectedCountry = null
     	countries = WorldMap.instance.getCountries()
+    	selectedCountry = currentConuntry
     }
 	
 	def addCountry(Country country) {
