@@ -30,7 +30,7 @@ class TestCaseFile extends TestCase {
 	@Test
 	def test_getCheckPossibleNextCountry() {
 		var mystery = set_up
-		var country = mystery.getCheckPossibleNextCountry();
+		var country = mystery.getPossibleNextCountry();
 
 		assertTrue(country.name == "Italia")
 	}

@@ -109,7 +109,7 @@ class GameData {
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
 		]
-		val bul = new Country("Bulgaria", worldMap) => [
+		val bel = new Country("Belgica", worldMap) => [
 			addFeature("tienen comidas sabrosas")
 			addFeature("hay gente amable")
 			addFeature("es el lugar perfecto para comer chocolate")
@@ -135,7 +135,7 @@ class GameData {
 		ita.addCountry(ale)
 		ita.addCountry(usa)
 		fra.addCountry(chi)
-		fra.addCountry(bul)
+		fra.addCountry(bel)
 		fra.addCountry(ale)
 		chi.addCountry(jap)
 		chi.addCountry(per)
@@ -151,14 +151,14 @@ class GameData {
 		mar.addCountry(mex)
 		mar.addCountry(per)
 		jap.addCountry(usa)
-		jap.addCountry(bul)
+		jap.addCountry(bel)
 		jap.addCountry(ita)
 		ale.addCountry(mex)
 		ale.addCountry(egt)
 		ale.addCountry(mar)
-		bul.addCountry(usa)
-		bul.addCountry(per)
-		bul.addCountry(egt)
+		bel.addCountry(usa)
+		bel.addCountry(per)
+		bel.addCountry(egt)
 		per.addCountry(chi)
 		per.addCountry(jap)
 		per.addCountry(ale)
@@ -173,7 +173,7 @@ class GameData {
 			add(mar)
 			add(jap)
 			add(ale)
-			add(bul)
+			add(bel)
 			add(per)
 			
 		]

@@ -22,7 +22,7 @@ class Library extends CommonPlace {
 		val villain = cf.responsible
 		var chance = Randoms.randomBetween(1, 10)
 		var lastClue = "."
-		val nextCountry = cf.checkPossibleNextCountry
+		val nextCountry = cf.possibleNextCountry
 
 		if (chance < 5)
 			lastClue = " y ademas " + villain.getRandomHobbie + "."

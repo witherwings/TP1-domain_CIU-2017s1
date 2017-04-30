@@ -8,6 +8,7 @@ import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import utils.Randoms
+import org.uqbar.commons.model.ObservableUtils
 
 @Observable
 @Accessors
@@ -102,7 +103,7 @@ class CaseFile {
 			this.criminalDestinations.add(country)
 	}
 
-	def Country getCheckPossibleNextCountry() {
+	def Country getPossibleNextCountry() {
 		val connections = this.currentCountry.connectedCountries
 		var index = 0
 		while (index < connections.size) {
@@ -119,6 +120,12 @@ class CaseFile {
 	 */
 	def Country escapePlanFinalCountry() {
 		escapePlan.get(escapePlan.size - 1)
+	}
+	
+	def updateVariables() {
+		ObservableUtils.firePropertyChanged(this, "currentCountry")
+		ObservableUtils.firePropertyChanged(this, "lastCountry")
+		ObservableUtils.firePropertyChanged(this, "nextCountry")
 	}
 
 }

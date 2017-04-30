@@ -33,7 +33,7 @@ class Villain extends Occupant {
 	}
 
 	new() {
-		this.name = ""
+		this.name = null
 		this.signs = new ArrayList()
 		this.hobbies = new ArrayList()
 	}

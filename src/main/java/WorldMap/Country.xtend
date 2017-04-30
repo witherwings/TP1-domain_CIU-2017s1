@@ -19,6 +19,7 @@ class Country {
 	List<Country> connectedCountries;
 	// There are only 3 places per country
 	List<CommonPlace> places;
+	
 
 	new(String name, WorldMap map) {
 		this.map = map
@@ -70,6 +71,19 @@ class Country {
 		]
 		return l
 	}
+	
+	def getFirstPlace(){
+		this.getPlace(0)
+	}
+	
+	def getSecondPlace(){
+		this.getPlace(1)
+	}
+	
+	def getThirdPlace(){
+		this.getPlace(2)
+	}
+	
 
 	def placesNames() {
 		val l = new ArrayList<String>()

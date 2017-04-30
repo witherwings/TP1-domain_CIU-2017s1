@@ -19,7 +19,7 @@ class Bank extends CommonPlace {
 
 	override getClue(CaseFile cf) {
 		val villain = cf.responsible
-		val nextCountry = cf.checkPossibleNextCountry		
+		val nextCountry = cf.possibleNextCountry		
 			
 		"Vi alguien como describe! " + villain.getRandomSign 
 			+ ". Recuerdo tambien que en su proximo destino " 

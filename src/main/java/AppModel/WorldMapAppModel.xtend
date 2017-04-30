@@ -24,11 +24,6 @@ class WorldMapAppModel {
     def updateList(){
     	ObservableUtils.firePropertyChanged(this, "countries")
     	ObservableUtils.firePropertyChanged(this, "selectedCountry")
-//    	var currentConuntry = this.selectedCountry
-//    	countries = null
-//    	selectedCountry = null
-//    	countries = WorldMap.instance.getCountries()
-//    	selectedCountry = currentConuntry
     }
     
     def getCountries(){
@@ -41,6 +36,14 @@ class WorldMapAppModel {
 	
 	def removeCountry(Country country){
 		WorldMap.instance.removeCountry(country)
+	}
+	
+	def checkCountryName(String name) {
+		for (i : 0 ..< countries.size) {
+			if (countries.get(i).name == name)
+				return true
+		}
+		return false
 	}
 	
 }
