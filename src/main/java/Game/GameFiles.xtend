@@ -9,6 +9,7 @@ import org.uqbar.commons.utils.Observable
 import org.apache.commons.lang.StringUtils
 import People.Villain
 import org.uqbar.commons.model.UserException
+import WorldMap.Country
 
 @Observable
 @Accessors
@@ -142,6 +143,25 @@ class GameFiles {
 	
 	def updateVillainByID(Integer id, Villain villain) {
 		this.getVillainByID(id).updateV(villain)
+	}
+	
+	def getCountryByID(Integer id) {
+		return map.countries.findFirst[ it.id == id ]
+	}
+	
+	def updateCountryByID(Integer id, Country country) {
+		this.getCountryByID(id).updateC(country)
+	}
+	
+	def deleteCountry(Integer id) {
+		map.countries.removeIf[ it.id == id ]
+	}
+	
+	def setNewCountry(WorldMap.Country country) {
+		if (!country.completeData()) {
+			throw new UserException("El pais debe estar completo respecto a sus datos");
+		}
+		map.countries.add(country)
 	}
 	
 }

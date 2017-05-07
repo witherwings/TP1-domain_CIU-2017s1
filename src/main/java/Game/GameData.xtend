@@ -29,6 +29,7 @@ class GameData {
 
 	def static buildCountries(WorldMap worldMap) {
 		val egt = new Country("Egipto", worldMap) => [
+			id = 0
 			addFeature("hace calor")
 			addFeature("hay mucha arena")
 			addFeature("hay una edificacion muy conocida alli")
@@ -38,6 +39,7 @@ class GameData {
 		]
 		
 		val ita = new Country("Italia", worldMap) => [
+			id = 1
 			addFeature("tiene calles que son muy angostas")
 			addFeature("es el hogar de la pizza")
 			addFeature("hay una edificacion muy conocida alli")
@@ -48,6 +50,7 @@ class GameData {
 		]
 		
 		val fra = new Country("Francia", worldMap) => [
+			id = 2
 			addFeature("las personas usan mucho perfume")
 			addFeature("hay una edificacion muy conocida alli")
 			addFeature("es el lugar perfecto para comer baguettes")
@@ -57,6 +60,7 @@ class GameData {
 		]
 		
 		val chi = new Country("China", worldMap) => [
+			id = 3
 			addFeature("posee una inmensa cultura")
 			addFeature("tiene mucha poblacion")
 			addFeature("hay una edificacion muy conocida alli")
@@ -67,6 +71,7 @@ class GameData {
 		]
 		
 		val mex = new Country("Mexico", worldMap) => [
+			id = 4
 			addFeature("tienen comidas sabrosas")
 			addFeature("hay gente amable")
 			addFeature("es el lugar perfecto para tomar aguas frescas")
@@ -83,6 +88,7 @@ class GameData {
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
 			addPlace(new Embassy(new Keeper))
+			id = 5
 		]
 		val mar = new Country("Marruecos", worldMap) => [
 			addFeature("hacen hermosas telas")
@@ -92,6 +98,7 @@ class GameData {
 			addPlace(new Club(new Keeper))
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Bank(new Keeper))
+			id = 6
 		]
 		val jap = new Country("Japon", worldMap) => [
 			addFeature("son perosnas muy tradiconales")
@@ -100,6 +107,7 @@ class GameData {
 			addPlace(new Library(new Keeper))
 			addPlace(new Bank(new Keeper))
 			addPlace(new Club(new Keeper))
+			id = 7
 		]
 		val ale = new Country("Alemania", worldMap) => [
 			addFeature("hay gente amable")
@@ -108,6 +116,7 @@ class GameData {
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
+			id = 8
 		]
 		val bel = new Country("Belgica", worldMap) => [
 			addFeature("tienen comidas sabrosas")
@@ -117,6 +126,8 @@ class GameData {
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
 			addPlace(new Club(new Keeper))
+			
+			id = 9
 		]
 		val per = new Country("Peru", worldMap) => [
 			addFeature("hay una edificacion muy conocida alli")
@@ -126,6 +137,7 @@ class GameData {
 			addPlace(new Embassy(new Keeper))
 			addPlace(new Bank(new Keeper))
 			addPlace(new Library(new Keeper))
+			id = 10
 		]
 		
 		egt.addCountry(mar)

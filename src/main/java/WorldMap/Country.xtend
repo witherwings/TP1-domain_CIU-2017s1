@@ -9,6 +9,8 @@ import utils.Randoms
 import People.Villain
 import org.uqbar.commons.model.UserException
 import XtRest.MiniObject
+import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang.ArrayUtils
 
 @Observable
 @Accessors
@@ -129,6 +131,18 @@ class Country {
 	
 	def getMiniCountry() {
 		return new MiniObject(this); 
+	}
+	
+	def updateC(Country c) {
+		this.name = c.name;
+		this.features = c.features;
+		this.connectedCountries = c.connectedCountries;
+		this.places = c.places;
+	}
+	
+	def completeData() {
+		return StringUtils.isNotBlank(name) && !ArrayUtils.isEmpty(features) && 
+			!ArrayUtils.isEmpty(connectedCountries) && !ArrayUtils.isEmpty(places)
 	}
 
 }
