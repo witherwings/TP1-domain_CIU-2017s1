@@ -17,6 +17,7 @@ class MiniObject {
 	}
 	
 	new(Country c) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		this.id = c.id
+		this.name = c.name
 	}
 }

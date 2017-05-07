@@ -14,14 +14,14 @@ class WorldMap {
 	private static WorldMap instance = null
 
 	new() {
-		countries = GameData.buildCountries(this)
+		this.countries = GameData.buildCountries(this)
 	}
 
 	static def getInstance() {
-		if (instance == null) {
+		if (instance === null) {
 			instance = new WorldMap
 		}
-		instance
+		return instance
 	}
 
 	def List<Country> getCountries() {

@@ -117,6 +117,14 @@ class GameFiles {
 		}
 	}
 	
+	def searchCountries(String substring) {
+		if (StringUtils.isBlank(substring)) {
+			this.map.countries
+		} else {
+			this.map.countries.filter[ it.name.toLowerCase.contains(substring.toLowerCase) ].toList			
+		}
+	}
+	
 	def getVillainByID(Integer id) {
 		return caseFiles.get(0).archives.getVillains().findFirst[ it.id == id ]
 	}

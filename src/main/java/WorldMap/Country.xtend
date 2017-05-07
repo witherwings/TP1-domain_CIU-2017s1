@@ -8,11 +8,13 @@ import org.uqbar.commons.utils.Observable
 import utils.Randoms
 import People.Villain
 import org.uqbar.commons.model.UserException
+import XtRest.MiniObject
 
 @Observable
 @Accessors
 class Country {
 
+	int id 
 	WorldMap map
 	String name;
 	List<String> features;
@@ -34,6 +36,10 @@ class Country {
 		this.features = new ArrayList()
 		this.connectedCountries = new ArrayList();
 		this.places = new ArrayList();
+	}
+	
+	def setId(int id) {
+		this.id = id 
 	}
 
 	def addFeature(String feature) {
@@ -119,6 +125,10 @@ class Country {
 	def setVillainInPlace(Villain villain) {
 		val randomPlace = Randoms.randomBetween(0,2)
 		this.places.get(randomPlace).setOccupant(villain)
+	}
+	
+	def getMiniCountry() {
+		return new MiniObject(this); 
 	}
 
 }

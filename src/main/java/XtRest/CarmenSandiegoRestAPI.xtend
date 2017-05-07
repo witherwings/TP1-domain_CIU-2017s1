@@ -30,6 +30,12 @@ class CarmenSandiegoRestAPI {
         response.contentType = ContentType.APPLICATION_JSON
        	ok(this.getMiniVillains(string).toJson)
     }
+	
+	@Get("/paises")
+    def getCountries(String string) {
+        response.contentType = ContentType.APPLICATION_JSON
+       	ok(this.getMiniCountries(string).toJson)
+    }
     
     @Get("/villano/:id")
     def getVillainById() {
@@ -105,6 +111,17 @@ class CarmenSandiegoRestAPI {
 		
 		for (i : 0 ..< listV.size) {
 			minis.add(listV.get(i).getMiniVillain)
+		}
+		
+		return minis
+	}
+	
+	def getMiniCountries(String string) {
+		val listV = this.files.searchCountries(string)
+		val minis = new ArrayList()
+		
+		for (i : 0 ..< listV.size) {
+			minis.add(listV.get(i).getMiniCountry)
 		}
 		
 		return minis
