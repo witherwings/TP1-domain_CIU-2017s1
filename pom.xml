@@ -27,7 +27,11 @@
           <artifactId>junit</artifactId>
           <version>4.12</version>
       </dependency>
-
+      <dependency>
+		<groupId>org.uqbar</groupId>
+		<artifactId>xtrest</artifactId>
+		<version>0.1.6</version>
+	</dependency>
   </dependencies>
 
 

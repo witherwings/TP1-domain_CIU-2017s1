@@ -16,6 +16,7 @@ class ArchiveVillain {
 
 	new() {
 		val carmen = new Villain("Carmen Sandiego") => [
+			setID(1)
 			setGender("Femenino")
 			addASign("tiene pelo rojo")
 			addASign("maneja un convertible")
@@ -25,6 +26,7 @@ class ArchiveVillain {
 			addAHobbie("le gusta eludir a la policia")
 		]
 		val igor = new Villain("Igor Igorovich") => [
+			setID(2)
 			setGender("Masculino")
 			addASign("tiene pelo rubio")
 			addASign("maneja limosina")
@@ -34,6 +36,7 @@ class ArchiveVillain {
 			addAHobbie("le gusta cocinar")
 		]		
 		val alcapone = new Villain("Al Capone") =>[
+			setID(3)
 			setGender("Masculino")
 			addASign("tiene una cicatriz en el lado izquierdo de la cara")
 			addASign("maneja un auto negro")
@@ -42,6 +45,7 @@ class ArchiveVillain {
 			addAHobbie("realiza regulares practicas de tiro")
 		]
 		val betty = new Villain("Betty Chiars") =>[
+			setID(4)
 			setGender("Femenino")
 			addASign("tiene pelo rubio")
 			addASign("le gusta el deporte")
@@ -50,6 +54,7 @@ class ArchiveVillain {
 			addAHobbie("practica artes marciales")
 		]
 		val vic = new Villain("Vic La Mancha") =>[
+			setID(5)
 			setGender("Masculino")
 			addASign("tiene olor a aceite de autos")
 			addASign("siempre lleva un cuchillo en su cinturon")

@@ -8,10 +8,11 @@ import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import utils.Randoms
+import XtRest.MiniObject
 
 @Observable
 @Accessors
-class Villain extends Occupant {
+class Villain extends Occupant{
 	String name;
 	String gender;
 	List<String> signs;
@@ -36,6 +37,10 @@ class Villain extends Occupant {
 		this.name = null
 		this.signs = new ArrayList()
 		this.hobbies = new ArrayList()
+	}
+	
+	def void setID(int id){
+		this.id = id
 	}
 
 	def void setGender(String gender) {
@@ -88,5 +93,9 @@ class Villain extends Occupant {
 	}
 
 	override isVillain() { true }
+	
+	def getMiniVillain(){
+		return new MiniObject(this)
+	}
 
 }

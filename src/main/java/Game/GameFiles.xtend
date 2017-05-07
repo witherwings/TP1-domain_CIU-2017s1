@@ -6,6 +6,7 @@ import java.util.ArrayList
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
+import org.apache.commons.lang.StringUtils
 
 @Observable
 @Accessors
@@ -13,6 +14,7 @@ class GameFiles {
 
 	List<CaseFile> caseFiles
 	WorldMap map = WorldMap.instance
+	
 
 	private static GameFiles instance = null
 
@@ -104,4 +106,13 @@ class GameFiles {
 	def List<CaseFile> getCaseFiles() {
 		this.caseFiles
 	}
+	
+	def searchVillains(String substring) {
+		if (StringUtils.isBlank(substring)) {
+			this.caseFiles.get(0).archives.getVillains()
+		} else {
+			this.caseFiles.get(0).archives.getVillains().filter[ it.name.toLowerCase.contains(substring.toLowerCase) ].toList			
+		}
+	}
+	
 }
