@@ -36,7 +36,7 @@ class CarmenSandiegoRestAPI {
         response.contentType = ContentType.APPLICATION_JSON
         try {        	
             var villain = this.files.getVillainByID(Integer.valueOf(id))
-            if (villain == null) {
+            if (villain === null) {
             	notFound(getErrorJson("No existe villano con ese id"))
             } else {
             	ok(new StandardVillain(villain).toJson)
@@ -53,7 +53,7 @@ class CarmenSandiegoRestAPI {
     	try{
     		val villain = this.files.getVillainByID(Integer.valueOf(id))
     		val Villain updVillain = body.fromJson(Villain)
-    		if (villain == null) {
+    		if (villain === null) {
             	notFound(getErrorJson("No existe villano con ese id"))
             } else {
             	this.files.updateVillainByID(Integer.valueOf(id),updVillain)
