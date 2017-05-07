@@ -118,7 +118,7 @@ class GameFiles {
 	}
 	
 	def getVillainByID(Integer id) {
-		caseFiles.get(0).archives.getVillains().findFirst[ it.id == id ]
+		return caseFiles.get(0).archives.getVillains().findFirst[ it.id == id ]
 	}
 	
 	def deleteVillain(Integer id) {

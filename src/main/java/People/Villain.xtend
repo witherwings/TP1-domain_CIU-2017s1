@@ -101,10 +101,8 @@ class Villain extends Occupant{
 	}
 	
 	def completeData() {
-		StringUtils.isNotBlank(name)
-		StringUtils.isNotBlank(gender)
-		!ArrayUtils.isEmpty(signs)
-		!ArrayUtils.isEmpty(hobbies)
+		return StringUtils.isNotBlank(name) && StringUtils.isNotBlank(gender) &&
+			!ArrayUtils.isEmpty(signs) && !ArrayUtils.isEmpty(hobbies)
 	}
 	
 	def updateV(Villain updVillain) {
