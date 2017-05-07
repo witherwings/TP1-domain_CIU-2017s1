@@ -9,6 +9,8 @@ import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import utils.Randoms
 import XtRest.MiniObject
+import org.apache.commons.lang.StringUtils
+import org.apache.commons.lang.ArrayUtils
 
 @Observable
 @Accessors
@@ -96,6 +98,21 @@ class Villain extends Occupant{
 	
 	def getMiniVillain(){
 		return new MiniObject(this)
+	}
+	
+	def completeData() {
+		StringUtils.isNotBlank(name)
+		StringUtils.isNotBlank(gender)
+		!ArrayUtils.isEmpty(signs)
+		!ArrayUtils.isEmpty(hobbies)
+	}
+	
+	def updateV(Villain updVillain) {
+		this.id = updVillain.id
+		this.name = updVillain.name
+		this.gender = updVillain.gender
+		this.signs = updVillain.signs
+		this.hobbies = updVillain.hobbies
 	}
 
 }

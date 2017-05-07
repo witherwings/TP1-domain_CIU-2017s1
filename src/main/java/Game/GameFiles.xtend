@@ -7,6 +7,8 @@ import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.utils.Observable
 import org.apache.commons.lang.StringUtils
+import People.Villain
+import org.uqbar.commons.model.UserException
 
 @Observable
 @Accessors
@@ -113,6 +115,25 @@ class GameFiles {
 		} else {
 			this.caseFiles.get(0).archives.getVillains().filter[ it.name.toLowerCase.contains(substring.toLowerCase) ].toList			
 		}
+	}
+	
+	def getVillainByID(Integer id) {
+		caseFiles.get(0).archives.getVillains().findFirst[ it.id == id ]
+	}
+	
+	def deleteVillain(Integer id) {
+		caseFiles.get(0).archives.getVillains().removeIf[ it.id == id ]
+	}
+	
+	def setNewVillain(Villain villain) {
+		if (!villain.completeData()) {
+			throw new UserException("El villano debe estar completo respecto a sus datos");
+		}
+		caseFiles.get(0).archives.getVillains().add(villain)
+	}
+	
+	def updateVillainByID(Integer id, Villain villain) {
+		this.getVillainByID(id).updateV(villain)
 	}
 	
 }
