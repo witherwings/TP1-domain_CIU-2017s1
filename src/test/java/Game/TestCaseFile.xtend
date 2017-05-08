@@ -16,7 +16,7 @@ class TestCaseFile extends TestCase {
 		var map = new WorldMap()
 		var signs = new ArrayList<String>(Arrays.asList("es un invento", "tiene barba"))
 		var hobbies = new ArrayList<String>(Arrays.asList("tocar la guitarra", "tomar cerveza artesanal"))
-		var villain = new Villain("Pepe", "Masculino", signs, hobbies)
+		var villain = new Villain(1, "Pepe", "Masculino", signs, hobbies)
 		var mystery = new CaseFile("El caso de test")
 
 		mystery.addVillain(villain)

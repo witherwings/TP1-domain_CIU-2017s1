@@ -17,6 +17,7 @@ class TestCountry extends TestCase{
 	Country brasil = new Country("Brasil", map)
 	
 	Villain elGato = new Villain(
+				1,
                 "The Cat",
                 "Male",
                 #["hair white", "mustache"],
