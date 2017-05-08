@@ -12,11 +12,18 @@ class StandardVillain{
 	List<String> signs
 	List<String> hobbies
 	
+	new () { }
+	
 	new(Villain v){
 		this.id = v.id
 		this.name = v.name
-		this.gender = v.gender
+		this.gender = v.gender	
 		this.signs = v.signs
 		this.hobbies = v.hobbies
 	}
+	
+	def Villain transform() {
+		return new Villain(name, gender, signs, hobbies)
+	}
+	
 }

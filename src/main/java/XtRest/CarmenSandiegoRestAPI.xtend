@@ -82,9 +82,9 @@ class CarmenSandiegoRestAPI {
     def createVillain(@Body String body) {
         response.contentType = ContentType.APPLICATION_JSON
         try {
-	        val Villain villain = body.fromJson(Villain)
+	        val StandardVillain sv = body.fromJson(StandardVillain)
 	        try {
-				this.files.setNewVillain(villain)
+				this.files.setNewVillain(sv.transform)
 				ok()	        	
 	        } 
 	        catch (UserException exception) {
