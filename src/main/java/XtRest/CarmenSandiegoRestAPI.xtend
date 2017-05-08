@@ -32,7 +32,7 @@ class CarmenSandiegoRestAPI {
        	ok(this.getMiniVillains(string).toJson)
     }
     
-    @Get("/villano/:id")
+    @Get("/villanos/:id")
     def getVillainById() {
         response.contentType = ContentType.APPLICATION_JSON
         try {        	
@@ -48,7 +48,7 @@ class CarmenSandiegoRestAPI {
         }
     }
     
-    @Put('/villano/:id')
+    @Put('/villanos/:id')
     def updateVillainById(@Body String body){
     	response.contentType = ContentType.APPLICATION_JSON
     	try{
@@ -66,7 +66,7 @@ class CarmenSandiegoRestAPI {
         }
     }
     
-    @Delete('/villano/:id')
+    @Delete('/villanos/:id')
     def deleteVillainById() {
         response.contentType = ContentType.APPLICATION_JSON
         try {
@@ -78,7 +78,7 @@ class CarmenSandiegoRestAPI {
         }
     }
     
-    @Post("/villano")
+    @Post("/villanos")
     def createVillain(@Body String body) {
         response.contentType = ContentType.APPLICATION_JSON
         try {
@@ -115,7 +115,7 @@ class CarmenSandiegoRestAPI {
        	ok(this.getMiniCountries(string).toJson)
     }
     
-    @Get("/pais/:id")
+    @Get("/paises/:id")
 	def getCountryById() {
 	    response.contentType = ContentType.APPLICATION_JSON
 	    try {        	
@@ -131,7 +131,7 @@ class CarmenSandiegoRestAPI {
 	    }
 	}
 	
-	@Put('/pais/:id')
+	@Put('/paises/:id')
 	def updateCountryById(@Body String body){
 	    response.contentType = ContentType.APPLICATION_JSON
 	    try{
@@ -149,7 +149,7 @@ class CarmenSandiegoRestAPI {
 	    }
 	}
 	
-	@Delete('/pais/:id')
+	@Delete('/paises/:id')
 	def deleteCountryById() {
 	    response.contentType = ContentType.APPLICATION_JSON
 	    try {
@@ -161,7 +161,7 @@ class CarmenSandiegoRestAPI {
 	    }
 	}
 	
-	@Post("/pais")
+	@Post("/paises")
 	def createCountry(@Body String body) {
 	    response.contentType = ContentType.APPLICATION_JSON
 	    try {
