@@ -23,7 +23,7 @@ class StandardVillain{
 	}
 	
 	def Villain transform() {
-		return new Villain(name, gender, signs, hobbies)
+		return new Villain(id, name, gender, signs, hobbies)
 	}
 	
 }

@@ -5,6 +5,7 @@ import WorldMap.Country
 import WorldMap.CommonPlace
 import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.ArrayList
+import WorldMap.WorldMap
 
 @Accessors
 class StandardCountry {
@@ -30,6 +31,10 @@ class StandardCountry {
 		}
 		
 		return r
+	}
+	
+	def Country adapt() {
+		return new Country(name, WorldMap.getInstance)
 	}
 	
 }

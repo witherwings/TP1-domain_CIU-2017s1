@@ -165,9 +165,9 @@ class CarmenSandiegoRestAPI {
 	def createCountry(@Body String body) {
 	    response.contentType = ContentType.APPLICATION_JSON
 	    try {
-	        val Country country = body.fromJson(Country)
+	        val StandardCountry country = body.fromJson(StandardCountry)
 	        try {
-	            this.files.setNewCountry(country)
+	            this.files.setNewCountry(country.adapt)
 	            ok()	        	
 	        } 
 	        catch (UserException exception) {

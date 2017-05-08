@@ -22,13 +22,6 @@ class Villain extends Occupant{
 	Country finalDestination;
 	CommonPlace finalPlace;
 
-	new(String name, String gender, List<String> signs, List<String> hobbies) {
-		this.name = name;
-		this.gender = gender;
-		this.signs = signs
-		this.hobbies = hobbies
-	}
-
 	new(String name) {
 		this.name = name
 		this.signs = new ArrayList()
@@ -39,6 +32,14 @@ class Villain extends Occupant{
 		this.name = null
 		this.signs = new ArrayList()
 		this.hobbies = new ArrayList()
+	}
+	
+	new(int id, String name, String gender, List<String> signs, List<String> hobbies) {
+		this.id = id
+		this.name = name 
+		this.gender = gender 
+		this.signs = signs
+		this.hobbies = hobbies 
 	}
 	
 	def void setID(int id){

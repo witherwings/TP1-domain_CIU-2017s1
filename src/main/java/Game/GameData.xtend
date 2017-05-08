@@ -14,15 +14,6 @@ class GameData {
 
 	val acme_list = new ArrayList<Villain>()
 
-	new() {
-		// acme_list
-		this.acme_list.add(new Villain("El Gato", "Masculino", #["Tiene pelo blanco", "Vive en el asilo de ancianos"],
-			#["Gatear", "Robar saxofones"]))
-
-		this.acme_list.add(new Villain("R2D2", "Indefinido", #["Es robotico"], #["Vibrar (If you know what i mean)"]))
-
-	}
-
 	def acme_list(int index) {
 		return this.acme_list.get(index)
 	}
