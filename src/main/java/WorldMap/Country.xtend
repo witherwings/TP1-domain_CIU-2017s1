@@ -40,6 +40,32 @@ class Country {
 		this.places = new ArrayList();
 	}
 	
+	new(int id, String name, List<String> features, List<String> connectedCountries, List<String> places) {
+		this.id = id 
+		this.name = name 
+		this.features = features 
+		this.map = WorldMap.getInstance 
+		this.connectedCountries = new ArrayList<Country>()
+		this.places = new ArrayList<CommonPlace>()
+		
+		for (i : 0 ..< connectedCountries.length) {
+			this.connectedCountries.add(
+				this.map.countries.findFirst( [ it.name == connectedCountries.get(i) ] )
+			)
+		}
+		
+		for (i : 0 ..< places.length) {
+			if (places.get(i) == "Embassy") 
+				this.places.add(new Embassy(null))
+			else if (places.get(i) == "Bank")
+				this.places.add(new Bank(null))
+			else if (places.get(i) == "Club")
+				this.places.add(new Club(null))
+			else if (places.get(i) == "Library")
+				this.places.add(new Library(null))
+		}
+	}
+	
 	def setId(int id) {
 		this.id = id 
 	}

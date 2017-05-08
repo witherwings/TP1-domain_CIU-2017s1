@@ -13,14 +13,19 @@ class StandardCountry {
 	String name;
 	List<String> features;
 	List<String> connectedCountries;
-	List<CommonPlace> places;
+	List<String> places;
+	
+	new () { }
 	
 	new(WorldMap.Country c) {
 		this.id = c.id
 		this.name = c.name 
 		this.features = c.features 
 		this.connectedCountries = names(c.connectedCountries)
-		this.places = c.places
+		
+		for (i : 0 ..< c.places.length) {
+			this.places.add(c.places.get(i).getPlaceName)
+		}
 	}
 	
 	def names(List<Country> countries) {
@@ -34,7 +39,7 @@ class StandardCountry {
 	}
 	
 	def Country adapt() {
-		return new Country(name, WorldMap.getInstance)
+		return new Country(id, name, features, connectedCountries, places) 
 	}
 	
 }
