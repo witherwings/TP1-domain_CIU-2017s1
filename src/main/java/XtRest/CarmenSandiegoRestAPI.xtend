@@ -53,7 +53,7 @@ class CarmenSandiegoRestAPI {
     	response.contentType = ContentType.APPLICATION_JSON
     	try{
     		val villain = this.files.getVillainByID(Integer.valueOf(id))
-    		val Villain updVillain = body.fromJson(Villain)
+    		val StandardVillain updVillain = body.fromJson(StandardVillain)
     		if (villain === null) {
             	notFound(getErrorJson("No existe villano con ese id"))
             } else {

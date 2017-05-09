@@ -10,6 +10,7 @@ import org.apache.commons.lang.StringUtils
 import People.Villain
 import org.uqbar.commons.model.UserException
 import WorldMap.Country
+import XtRest.StandardVillain
 
 @Observable
 @Accessors
@@ -143,6 +144,10 @@ class GameFiles {
 	
 	def updateVillainByID(Integer id, Villain villain) {
 		this.getVillainByID(id).updateV(villain)
+	}
+	
+	def updateVillainByID(Integer id, StandardVillain sv) {
+		this.getVillainByID(id).updateV(sv.transform)
 	}
 	
 	def getCountryByID(Integer id) {
