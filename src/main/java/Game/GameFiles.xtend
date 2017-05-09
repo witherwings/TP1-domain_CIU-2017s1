@@ -11,6 +11,7 @@ import People.Villain
 import org.uqbar.commons.model.UserException
 import WorldMap.Country
 import XtRest.StandardVillain
+import XtRest.StandardCountry
 
 @Observable
 @Accessors
@@ -156,6 +157,10 @@ class GameFiles {
 	
 	def updateCountryByID(Integer id, Country country) {
 		this.getCountryByID(id).updateC(country)
+	}
+	
+	def updateCountryByID(Integer id, StandardCountry country) {
+		this.getCountryByID(id).updateC(country.adapt)
 	}
 	
 	def deleteCountry(Integer id) {

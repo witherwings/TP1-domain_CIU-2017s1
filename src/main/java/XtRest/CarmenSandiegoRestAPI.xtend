@@ -136,7 +136,7 @@ class CarmenSandiegoRestAPI {
 	    response.contentType = ContentType.APPLICATION_JSON
 	    try{
 	        val country = this.files.getCountryByID(Integer.valueOf(id))
-	        val Country updCountry = body.fromJson(Country)
+	        val StandardCountry updCountry = body.fromJson(StandardCountry)
 	        if (country === null) {
 	            notFound(getErrorJson("No existe pais con ese id"))
 	        } else {
