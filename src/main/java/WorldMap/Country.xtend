@@ -11,6 +11,7 @@ import org.uqbar.commons.model.UserException
 import XtRest.MiniObject
 import org.apache.commons.lang.StringUtils
 import org.apache.commons.lang.ArrayUtils
+import Game.CaseFile
 
 @Observable
 @Accessors
@@ -173,9 +174,18 @@ class Country {
 	
 	def CommonPlace getCommonPlace(String placeName) {
 		for(CommonPlace cp : this.places){
-			if(cp.placeName.toLowerCase == placeName ){
+			if(cp.placeName.toLowerCase == placeName.toLowerCase ){
 				return cp
 			}
 		}
+		return null
 	}
+	
+	def String getClueFromPlace(String place, CaseFile cf) {
+		if(this.getCommonPlace(place) != null)
+			this.getCommonPlace(place).getClue(cf)
+		else
+			return null
+	}
+	
 }

@@ -37,6 +37,16 @@ class CarmenSandiegoRestAPI {
 		ok(new StandardCase(this.selectedCase).toJson)
 	}
 	
+	@Get("/pistaDelLugar")
+	def getClue(String place, String caseID){
+		response.contentType = ContentType.APPLICATION_JSON
+		val String result = this.selectedCase.currentCountry.getClueFromPlace(place, this.selectedCase)
+		if(result === null)
+			notFound(getErrorJson("No existe ese lugar en el pais actual"))
+		else
+			ok(result.toJson)
+	}
+	
 	@Post("/emitirOrdenPara")
     def createWarrantTo(@Body String body) {
     	response.contentType = ContentType.APPLICATION_JSON
