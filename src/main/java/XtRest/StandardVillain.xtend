@@ -6,6 +6,7 @@ import People.Villain
 
 @Accessors
 class StandardVillain{
+	
 	int id
 	String name
 	String gender

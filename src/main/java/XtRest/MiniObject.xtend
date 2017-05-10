@@ -3,7 +3,6 @@ package XtRest
 import People.Villain
 import WorldMap.Country
 import org.eclipse.xtend.lib.annotations.Accessors
-import java.util.List
 
 @Accessors
 class MiniObject {

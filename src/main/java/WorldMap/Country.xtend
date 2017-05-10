@@ -16,7 +16,7 @@ import org.apache.commons.lang.ArrayUtils
 @Accessors
 class Country {
 
-	int id 
+	public int id 
 	WorldMap map
 	String name;
 	List<String> features;

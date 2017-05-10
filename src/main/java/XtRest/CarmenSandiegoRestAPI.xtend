@@ -1,19 +1,17 @@
 package XtRest
 
 import Game.GameFiles
-import org.uqbar.xtrest.json.JSONUtils
-import org.uqbar.xtrest.api.annotation.Controller
-import org.uqbar.xtrest.api.annotation.Get
-import org.uqbar.xtrest.http.ContentType
-import java.util.ArrayList
-import org.uqbar.xtrest.api.annotation.Delete
-import org.uqbar.xtrest.api.annotation.Post
-import org.uqbar.xtrest.api.annotation.Body
-import People.Villain
-import org.uqbar.commons.model.UserException
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException
+import java.util.ArrayList
+import org.uqbar.commons.model.UserException
+import org.uqbar.xtrest.api.annotation.Body
+import org.uqbar.xtrest.api.annotation.Controller
+import org.uqbar.xtrest.api.annotation.Delete
+import org.uqbar.xtrest.api.annotation.Get
+import org.uqbar.xtrest.api.annotation.Post
 import org.uqbar.xtrest.api.annotation.Put
-import WorldMap.Country
+import org.uqbar.xtrest.http.ContentType
+import org.uqbar.xtrest.json.JSONUtils
 
 @Controller
 class CarmenSandiegoRestAPI {
@@ -25,6 +23,10 @@ class CarmenSandiegoRestAPI {
 	new(GameFiles files) {
 		this.files = files
 	}
+	
+	//-----------------------------------------------------------------------------------//
+	/* VILLANOS!!! */
+	//-----------------------------------------------------------------------------------//
 	
 	@Get("/villanos")
     def getVillains(String string) {
@@ -107,7 +109,9 @@ class CarmenSandiegoRestAPI {
 		return minis
 	}
 	
+	//-----------------------------------------------------------------------------------//
 	/* PAISES!!! */
+	//-----------------------------------------------------------------------------------//
 	
 	@Get("/paises")
     def getCountries(String string) {

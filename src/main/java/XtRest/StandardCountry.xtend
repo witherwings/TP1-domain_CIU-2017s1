@@ -1,14 +1,13 @@
 package XtRest
 
-import java.util.List
 import WorldMap.Country
-import WorldMap.CommonPlace
-import org.eclipse.xtend.lib.annotations.Accessors
 import java.util.ArrayList
-import WorldMap.WorldMap
+import java.util.List
+import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 class StandardCountry {
+	
 	int id 
 	String name;
 	List<String> features;
@@ -17,13 +16,14 @@ class StandardCountry {
 	
 	new () { }
 	
-	new(WorldMap.Country c) {
+	new(Country c) {
 		this.id = c.id
 		this.name = c.name 
 		this.features = c.features 
 		this.connectedCountries = names(c.connectedCountries)
+		this.places = new ArrayList
 		
-		for (i : 0 ..< c.places.length) {
+		for (i : 0 ..< c.places.size) {
 			this.places.add(c.places.get(i).getPlaceName)
 		}
 	}
