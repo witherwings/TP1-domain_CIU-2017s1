@@ -11,7 +11,7 @@ class StandardCountry {
 	int id 
 	String name;
 	List<String> features;
-	List<String> connectedCountries;
+	List<MiniObject> connectedCountries;
 	List<String> places;
 	
 	new () { }
@@ -29,17 +29,21 @@ class StandardCountry {
 	}
 	
 	def names(List<Country> countries) {
-		val r = new ArrayList<String>()
+		val r = new ArrayList<MiniObject>()
 		
 		for (c : 0 ..<countries.size) {
-			r.add(countries.get(c).name)
+			r.add(new MiniObject(countries.get(c)))
 		}
 		
 		return r
 	}
 	
 	def Country adapt() {
-		return new Country(id, name, features, connectedCountries, places) 
+		val namesCC = new ArrayList
+		for (c : 0 ..<connectedCountries.size) {
+			namesCC.add(connectedCountries.get(c).name)
+		}
+		return new Country(id, name, features, namesCC, places) 
 	}
 	
 }

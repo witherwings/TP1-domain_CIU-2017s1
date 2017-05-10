@@ -10,6 +10,8 @@ class MiniObject {
 	int id
 	String name
 	
+	new(){}
+	
 	new(Villain v) {
 		this.id = v.id
 		this.name = v.name
