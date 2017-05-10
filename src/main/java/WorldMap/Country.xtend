@@ -170,5 +170,12 @@ class Country {
 		return StringUtils.isNotBlank(name) && !ArrayUtils.isEmpty(features) && 
 			!ArrayUtils.isEmpty(connectedCountries) && !ArrayUtils.isEmpty(places)
 	}
-
+	
+	def CommonPlace getCommonPlace(String placeName) {
+		for(CommonPlace cp : this.places){
+			if(cp.placeName.toLowerCase == placeName ){
+				return cp
+			}
+		}
+	}
 }

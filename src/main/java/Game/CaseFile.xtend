@@ -14,6 +14,7 @@ import org.uqbar.commons.model.ObservableUtils
 @Accessors
 class CaseFile {
 
+	int id;
 	String caseName;
 	Villain responsible;
 	List<Country> escapePlan;
@@ -126,6 +127,10 @@ class CaseFile {
 		ObservableUtils.firePropertyChanged(this, "currentCountry")
 		ObservableUtils.firePropertyChanged(this, "lastCountry")
 		ObservableUtils.firePropertyChanged(this, "nextCountry")
+	}
+	
+	def canTravel(Country country) {
+		return this.currentCountry.connectedCountries.contains(country)
 	}
 
 }

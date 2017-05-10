@@ -12,6 +12,7 @@ import org.uqbar.xtrest.api.annotation.Post
 import org.uqbar.xtrest.api.annotation.Put
 import org.uqbar.xtrest.http.ContentType
 import org.uqbar.xtrest.json.JSONUtils
+import Game.CaseFile
 
 @Controller
 class CarmenSandiegoRestAPI {
@@ -19,10 +20,61 @@ class CarmenSandiegoRestAPI {
 	extension JSONUtils = new JSONUtils
 
 	GameFiles files
+	CaseFile selectedCase
 	
 	new(GameFiles files) {
 		this.files = files
 	}
+	
+	//-----------------------------------------------------------------------------------//
+	/* JUEGO!!! */
+	//-----------------------------------------------------------------------------------//
+	
+	@Post("/iniciarJuego")
+	def startGame(){
+		response.contentType = ContentType.APPLICATION_JSON
+		this.selectedCase = this.files.randomCase()
+		ok(new StandardCase(this.selectedCase).toJson)
+	}
+	
+	@Post("/emitirOrdenPara")
+    def createWarrantTo(@Body String body) {
+    	response.contentType = ContentType.APPLICATION_JSON
+        try {
+	        val Warrant w = body.fromJson(Warrant)
+	        try {
+	        	this.files.setWarrant(w)
+				ok("Orden emitida correctamente".toJson)	        	      
+	        } 
+	        catch (UserException exception) {
+	        	badRequest(getErrorJson(exception.message))
+	        }
+        } 
+        catch (UnrecognizedPropertyException exception) {
+        	badRequest(getErrorJson("El body debe ser un Orden de arresto"))
+        }
+    }
+    
+    @Post("/viajar")
+    def travel(@Body String body){
+    	response.contentType = ContentType.APPLICATION_JSON
+    	try{
+    		val TravelCountry t = body.fromJson(TravelCountry)
+    		val current = this.files.getCountryByID(t.destinoId)
+    		if (!this.selectedCase.canTravel(current)) {
+    			notFound(getErrorJson("No existe pais conectado con ese id"))
+    		}
+    		else{
+    			this.selectedCase.lastCountry = this.selectedCase.currentCountry
+    			this.selectedCase.currentCountry = current
+    			this.selectedCase.criminalDestinations.add(this.selectedCase.lastCountry)
+    			ok(new StandardCase(this.selectedCase).toJson)	
+    		}    		
+    	}
+    	catch(UnrecognizedPropertyException exception) {
+        	badRequest(getErrorJson("El body debe ser un destino valido"))
+        }
+    }
 	
 	//-----------------------------------------------------------------------------------//
 	/* VILLANOS!!! */

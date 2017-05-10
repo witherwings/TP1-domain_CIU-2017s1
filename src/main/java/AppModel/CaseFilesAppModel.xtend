@@ -7,7 +7,6 @@ import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 import org.uqbar.commons.model.ObservableUtils
 import org.uqbar.commons.utils.Observable
-import utils.Randoms
 
 @Observable
 @Accessors
@@ -26,7 +25,7 @@ class CaseFilesAppModel {
 	}
 
 	def randomNewCase() {
-		caseF = cases.get(Randoms.randomBetween(0, 4))
+		caseF = GameFiles.instance.randomCase()
 	}
 	
 	 def updateList(){

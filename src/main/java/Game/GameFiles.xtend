@@ -12,6 +12,8 @@ import org.uqbar.commons.model.UserException
 import WorldMap.Country
 import XtRest.StandardVillain
 import XtRest.StandardCountry
+import utils.Randoms
+import XtRest.Warrant
 
 @Observable
 @Accessors
@@ -19,12 +21,13 @@ class GameFiles {
 
 	List<CaseFile> caseFiles
 	WorldMap map = WorldMap.instance
-	
+	Warrant warrant
 
 	private static GameFiles instance = null
 
 	new() {
 		val case1 = new CaseFile("Tumba Del Faraon") => [
+			id = 1
 			addCountryRobbed(map.getCountryByName("Egipto"))
 			addReport("A las 9 de la mañana en la ciudad del Cairo la comunidad científica fue conmovida al darse 
 			cuenta del faltante de gran valor! El sarcófago del faraón Usermaatra-Meriamón Ramsés-Heqaiunu, mejor 
@@ -37,6 +40,7 @@ class GameFiles {
 		]
 
 		val case2 = new CaseFile("La Pantera Rosa") => [
+			id = 2
 			addCountryRobbed(map.getCountryByName("Italia"))
 			addReport("En el dia de ayer, cercano a la medianoche, se produjo uno de los robos mas grandes de los 
 			ultimos tiempos: el robo del gran diamante Pantera Rosa directamente de las vitrinas del salon de trofeos
@@ -50,6 +54,7 @@ class GameFiles {
 		]
 
 		val case3 = new CaseFile("Framed") => [
+			id = 3
 			addCountryRobbed(map.getCountryByName("Francia"))
 			addReport("Luego de un supuesto incendio en el museo de Louvre esta mañana, 15 pinturas de extremado
 			valor han desaparecido de su lugares de reposo, entre ellas obras como la Mona Lisa de Leonardo Da Vinci.
@@ -63,6 +68,7 @@ class GameFiles {
 		]
 
 		val case4 = new CaseFile("Buda no estara contento") => [
+			id = 4
 			addCountryRobbed(map.getCountryByName("China"))
 			addReport("La Interpol se ha puesto en contacto con nosotros para que les demos soporte con un caso que
 			sucedio esta semana. La Guardia Imperial de Jade ha desaparecido por completo!. La coleccion contaba con mas
@@ -78,6 +84,7 @@ class GameFiles {
 		]
 
 		val case5 = new CaseFile("Quetzacoatl") => [
+			id = 5
 			addCountryRobbed(map.getCountryByName("Mexico"))
 			addReport("El gran papiro de Quetzacoatl ha desaparecido!. El papiro contenia informacion privilegiada
 			acerca de la vida de los escribas y sacerdotes del gran dios Azteca. Se cree que incluso contenia escondido
@@ -172,6 +179,20 @@ class GameFiles {
 			throw new UserException("El pais debe estar completo respecto a sus datos");
 		}
 		map.countries.add(country)
+	}
+	
+	def CaseFile randomCase() {
+		val idCase = Randoms.randomBetween(0,4)
+		this.caseFiles.get(idCase)
+	}
+	
+	def setWarrant(Warrant warrant) {
+		if(warrant.villanoId == 0 || warrant.casoId == 0){
+			val e  = new UserException("Faltan datos en la orden de arresto")
+			throw e
+		}else{
+			this.warrant = warrant	
+		}
 	}
 	
 }
