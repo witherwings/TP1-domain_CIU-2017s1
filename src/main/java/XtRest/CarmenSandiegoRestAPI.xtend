@@ -159,6 +159,24 @@ class CarmenSandiegoRestAPI {
         	badRequest(getErrorJson("El body debe ser un Villano valido"))
         }
     }
+    
+    @Post("/villanos/:id")
+    def createVillainWithDummyId(@Body String body) {
+        response.contentType = ContentType.APPLICATION_JSON
+        try {
+	        val StandardVillain sv = body.fromJson(StandardVillain)
+	        try {
+				this.files.setNewVillain(sv.transform)
+				ok()	        	
+	        } 
+	        catch (UserException exception) {
+	        	badRequest(getErrorJson(exception.message))
+	        }
+        } 
+        catch (UnrecognizedPropertyException exception) {
+        	badRequest(getErrorJson("El body debe ser un Villano valido"))
+        }
+    }
 	
 	def getMiniVillains(String string) {
 		val listV = this.files.searchVillains(string)
