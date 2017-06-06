@@ -10,5 +10,5 @@ class CarmenSandiegoApp {
 
         XTRest.startInstance(new CarmenSandiegoRestAPI(gameFiles), 9000)
     }
-	
+
 }

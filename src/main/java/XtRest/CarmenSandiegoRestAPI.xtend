@@ -245,6 +245,24 @@ class CarmenSandiegoRestAPI {
 	    }
 	}
 	
+	@Post("/paises/:id")
+	def createCountryWithDummyId(@Body String body) {
+	    response.contentType = ContentType.APPLICATION_JSON
+	    try {
+	        val StandardCountry country = body.fromJson(StandardCountry)
+	        try {
+	            this.files.setNewCountry(country.adapt)
+	            ok()	        	
+	        } 
+	        catch (UserException exception) {
+	            badRequest(getErrorJson(exception.message))
+	        }
+	    } 
+	    catch (UnrecognizedPropertyException exception) {
+	        badRequest(getErrorJson("El body debe ser un Pais valido"))
+	    }
+	}
+	
 	def getMiniCountries(String string) {
 		val listV = this.files.searchCountries(string)
 		val minis = new ArrayList()

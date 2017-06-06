@@ -56,13 +56,13 @@ class Country {
 		}
 		
 		for (i : 0 ..< places.length) {
-			if (places.get(i) == "Embassy") 
+			if (places.get(i) == "Embassy" || places.get(i) == "Embajada") 
 				this.places.add(new Embassy(null))
-			else if (places.get(i) == "Bank")
+			else if (places.get(i) == "Bank" || places.get(i) == "Banco")
 				this.places.add(new Bank(null))
-			else if (places.get(i) == "Club")
+			else if (places.get(i) == "Club" || places.get(i) == "Club")
 				this.places.add(new Club(null))
-			else if (places.get(i) == "Library")
+			else if (places.get(i) == "Library" || places.get(i) == "Libreria")
 				this.places.add(new Library(null))
 		}
 	}
@@ -168,8 +168,7 @@ class Country {
 	}
 	
 	def completeData() {
-		return StringUtils.isNotBlank(name) && !ArrayUtils.isEmpty(features) && 
-			!ArrayUtils.isEmpty(connectedCountries) && !ArrayUtils.isEmpty(places)
+		return true;
 	}
 	
 	def CommonPlace getCommonPlace(String placeName) {
