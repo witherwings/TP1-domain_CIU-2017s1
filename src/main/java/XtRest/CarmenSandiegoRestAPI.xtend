@@ -1,5 +1,6 @@
 package XtRest
 
+import Game.CaseFile
 import Game.GameFiles
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException
 import java.util.ArrayList
@@ -12,7 +13,6 @@ import org.uqbar.xtrest.api.annotation.Post
 import org.uqbar.xtrest.api.annotation.Put
 import org.uqbar.xtrest.http.ContentType
 import org.uqbar.xtrest.json.JSONUtils
-import Game.CaseFile
 
 @Controller
 class CarmenSandiegoRestAPI {
