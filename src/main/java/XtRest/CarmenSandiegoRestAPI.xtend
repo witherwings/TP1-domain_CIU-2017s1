@@ -86,6 +86,13 @@ class CarmenSandiegoRestAPI {
         }
     }
 	
+	@Get("/chequearResponsable/:id")
+	def checkWarrant(){
+		response.contentType = ContentType.APPLICATION_JSON
+		var suspect = this.files.getVillainByID(Integer.valueOf(id))
+		ok('''{ "Chequeo" : "«this.selectedCase.checkSuspect(suspect)»" }''')
+	}
+	
 	//-----------------------------------------------------------------------------------//
 	/* VILLANOS!!! */
 	//-----------------------------------------------------------------------------------//
