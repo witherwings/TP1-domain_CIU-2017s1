@@ -44,7 +44,7 @@ class CarmenSandiegoRestAPI {
 		if(result === null)
 			notFound(getErrorJson("No existe ese lugar en el pais actual"))
 		else
-			ok(result.toJson)
+			ok('''{ "pista" : "«result»" }''')
 	}
 	
 	@Post("/emitirOrdenPara")
