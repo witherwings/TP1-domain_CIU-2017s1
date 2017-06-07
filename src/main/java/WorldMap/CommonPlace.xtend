@@ -20,4 +20,9 @@ abstract class CommonPlace {
 	
 	def String getClue(CaseFile cf)
 	
+	def Occupant getOccupant()
+	{
+		return this.occupant
+	}
+	
 }

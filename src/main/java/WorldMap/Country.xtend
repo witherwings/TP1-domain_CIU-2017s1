@@ -1,17 +1,15 @@
 package WorldMap
 
+import Game.CaseFile
 import People.Informant
+import People.Villain
+import XtRest.MiniObject
 import java.util.ArrayList
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
+import org.uqbar.commons.model.UserException
 import org.uqbar.commons.utils.Observable
 import utils.Randoms
-import People.Villain
-import org.uqbar.commons.model.UserException
-import XtRest.MiniObject
-import org.apache.commons.lang.StringUtils
-import org.apache.commons.lang.ArrayUtils
-import Game.CaseFile
 
 @Observable
 @Accessors
@@ -181,8 +179,9 @@ class Country {
 	}
 	
 	def String getClueFromPlace(String place, CaseFile cf) {
-		if(this.getCommonPlace(place) != null)
-			this.getCommonPlace(place).getClue(cf)
+		var CommonPlace placeC = this.getCommonPlace(place);
+		if(placeC != null)
+			placeC.getOccupant().getClue(cf,placeC)
 		else
 			return null
 	}
